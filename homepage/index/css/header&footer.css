@@ -1,0 +1,130 @@
+@charset "UTF-8";
+
+/* header 영역 내용만 담겨있습니다. */
+
+header{
+    position: relative;
+    width: 100%;
+    height: 100px;
+    display: grid;
+    grid-template-columns: 300px 70%;
+    grid-template-rows: 100px;
+}
+header::after{
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 1px;
+    top: 100px;
+    content: "";
+    background: linear-gradient(to right, #ccc 0%, transparent 100%);
+}
+
+/* [S] 1.h1 */
+h1{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    cursor: pointer;
+    /* border: 1px solid yellow; */
+}
+h1 span{
+    /* visibility: hidden; */
+    position: absolute;
+    display: inline-block;
+    /* width: 100px; */
+    height: 100px;
+    left: 140px; /*이미지100, 양쪽여백 20씩*/
+    color: #ccc;
+    line-height: 100px;
+    font-size: 40px;
+    /* border: 1px solid red; */
+}
+h1 .logo{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 0;
+    left: 20px;
+    /* border: 1px solid navy; */
+}
+h1 .logo img{
+    position: relative;
+    width: 80px;
+    margin: 10px;
+}
+
+/* [S] 2.nav */
+nav{
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+nav .tMenu{
+    position: relative;
+    width: 800px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+    text-align: center;
+}
+nav .menu{
+    position: relative;
+    z-index: 10;
+}
+nav .menu>a{
+    display: inline-block;
+    height: 100px;
+    line-height: 100px;
+    font-size: 20px;
+    /* font-weight: bold; */
+    color: #ccc;
+    /* border: 1px solid navy; */
+}
+nav .menu>a::after{
+    position: relative;
+    /* padding: 0 40px; */
+    content: "·";
+    left: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ccc;
+    /* background-color: yellow; */
+}
+nav .menu:last-child>a::after{
+    content: none;
+}
+
+nav .subMenu{
+    display: none;
+    background-color: #000;
+    border-bottom: 1px solid #ccc;
+}
+nav .subMenu .smenu{
+    line-height: 50px;
+}
+nav .subMenu .smenu a{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    color: #ccc;
+}
+nav .subMenu.show{
+}
+
+
+/* [S] 3.login */
+#login{
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
+#login ul{
+    height: 100px;
+}
+#login li{
+    position: relative;
+    line-height: 100px;
+    text-align: center;
+}
+#login li a{
+    font-size: 15px;
+    color: #ccc;
+}
