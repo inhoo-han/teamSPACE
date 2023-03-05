@@ -19,6 +19,9 @@
             }, function() {
                 $(this).find('.subMenu').stop().slideUp(1000);
             });
+            $('.home').click(function() {
+                window.location = 'index.html'
+            });
         });
     </script>
 </head>
@@ -27,7 +30,7 @@
     <div id="wrap">
         <!---------- [S] header ---------->
         <header>
-            <h1>
+            <h1 class="home">
                 <span>LOGO</span>
                 <div class="logo">
                     <img src="images/header/logoSample2.png" alt="logo">
@@ -71,7 +74,7 @@
         <!---------- [S] #container ---------->
         <div id="container">
             <div id="space_area">
-                <div class="skip show">
+                <div class="skip down">
                     효과 넘기기
                 </div>
                 <!-- [S] .cele //처음에는 보이지 않다가 일정 영역이 오면 보임 -->
@@ -84,6 +87,9 @@
                     </ul>
                 </div>    
                 <!-- [E] .cele -->
+                <div class="skip up">
+                    맨 위로
+                </div>
             </div>
             <div id="earth_area">
                 <img id="earth" src="images/earth.png" alt="earth">
