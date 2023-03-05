@@ -3,11 +3,21 @@ $(function() {
     $(window).scroll(function() {
         let scroll_top = $(window).scrollTop();
         console.log(scroll_top);
+        let documentHeight = $(document).height();
+        console.log(documentHeight);
+
+        /* earth size */
         $('#earth').css({
             transform: 'scale(' + (scrollY + 200)/200 + ')'
         });
 
-        /* earth size */
+        /* skip버튼 클릭 */
+        $('.skip').click(function() {
+            // $('html, body').animate({
+            //     scrollTop : documentHeight
+            // }, 1000);
+            $('html,body').scrollTop(documentHeight);
+        });
     });
 });
 
