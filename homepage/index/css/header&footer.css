@@ -193,5 +193,5 @@ footer::before{
     height: 50px;
 }
 #footer_search .hidden{
-    
+    visibility: hidden;
 }
