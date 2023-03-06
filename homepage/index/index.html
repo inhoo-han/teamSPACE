@@ -74,9 +74,9 @@
         <!---------- [S] #container ---------->
         <div id="container">
             <div id="space_area">
-                <div class="skip down">
+                <!-- <div class="skip down">
                     효과 넘기기
-                </div>
+                </div> -->
                 <!-- [S] .cele //처음에는 보이지 않다가 일정 영역이 오면 보임 -->
                 <div class="cele">
                     <ul>
@@ -87,14 +87,40 @@
                     </ul>
                 </div>    
                 <!-- [E] .cele -->
-                <div class="skip up">
+                <!-- <div class="skip up">
                     맨 위로
-                </div>
+                </div> -->
             </div>
             <div id="earth_area">
-                <img id="earth" src="images/earth.png" alt="earth">
+                <!-- <img id="earth" src="images/earth.png" alt="earth"> -->
             </div>
+        </div>
         <!---------- [E] container ---------->
+        <!---------- [S] footer ---------->
+        <footer>
+            <div id="footer_link">
+                <ul>
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">우리소개</a></li>
+                    <li><a href="#">자료마당</a></li>
+                    <li><a href="#">참여마당</a></li>
+                </ul>
+            </div>
+            <div id="footer_search">
+                <form action="#" method="post" name="search">
+                    <fieldset>
+                        <legend>검색영역</legend>
+                        <label for="srch" class="hidden">검색</label>
+                        <input type="search" id="srch" placeholder="검색어를 입력하세요">
+                        <button type="submit" class="srch_btn"><img src="images/search.png" alt="search"></button>
+                    </fieldset>
+                </form>
+            </div>
+            <p class="copyright">
+                &copy; 2023 TeamSPACE. ALL RIGHTS RESERVED.
+            </p>
+        </footer>
+        <!---------- [E] footer ---------->
     </div>
     <!-------------------- [E] #wrap -------------------->
 </body>
