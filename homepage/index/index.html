@@ -45,17 +45,29 @@
                     <li class="menu">
                         <a href="#">소식마당</a>
                         <ul class="subMenu">
-                            <li class="smenu"><a href="#">여기주목!공지사항</a></li>
+                            <li class="smenu"><a href="#">여기주목 공지사항</a></li>
                             <li class="smenu"><a href="#">반짝반짝 우리소개</a></li>
                             <li class="smenu"><a href="#">공유해요 자료마당</a></li>
                         </ul>
                     </li>
                 </ul>
             </nav>
-            <div id="login">
+            <div id="login_area">
                 <ul>
+                    <li class="srch_btn"><a href="#"><img class="srch_img" src="images/search.png" alt="search"></a></li>
                     <li><a href="#">로그인</a></li>
+                    <li><a href="#">회원가입</a></li>
                 </ul>
+            </div>
+            <div id="header_search">
+                <form action="#" method="post" name="search">
+                    <fieldset>
+                        <legend>검색영역</legend>
+                        <label for="srch" class="hidden">검색</label>
+                        <input type="search" id="srch" placeholder="검색어를 입력하세요">
+                        <button type="submit" class="srch_btn"><img src="images/search.png" alt="search"></button>
+                    </fieldset>
+                </form>
             </div>
         </header>
         <!---------- [E] header ---------->
@@ -91,18 +103,8 @@
                     <li><a href="#">공지사항</a></li>
                     <li><a href="#">우리소개</a></li>
                     <li><a href="#">자료마당</a></li>
-                    <li><a href="#">참여마당</a></li>
+                    <li><a href="#">체험마당</a></li>
                 </ul>
-            </div>
-            <div id="footer_search">
-                <form action="#" method="post" name="search">
-                    <fieldset>
-                        <legend>검색영역</legend>
-                        <label for="srch" class="hidden">검색</label>
-                        <input type="search" id="srch" placeholder="검색어를 입력하세요">
-                        <button type="submit" class="srch_btn"><img src="images/search.png" alt="search"></button>
-                    </fieldset>
-                </form>
             </div>
             <p class="copyright">
                 &copy; 2023 TeamSPACE. ALL RIGHTS RESERVED.

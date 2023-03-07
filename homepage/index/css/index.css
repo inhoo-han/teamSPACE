@@ -3,7 +3,7 @@
 #wrap{
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background-image: url(../images/nightSky.jpg);
     background-attachment: fixed;
 }
@@ -102,16 +102,18 @@
     position: absolute;
     width: 800px;
     height: 800px;
-    bottom: 0px;
+    bottom: -150px;
     left: 0px;
     overflow: hidden;
+    z-index: 5;
+    pointer-events: none;
 }
 #earth_area_v2 img{
     position: relative;
     width: 100%;
     height: 100%;
     left: -400px;
-    bottom: -400px;
+    bottom: -250px;
 }
 
 /* * * * [E] #container * * * */
