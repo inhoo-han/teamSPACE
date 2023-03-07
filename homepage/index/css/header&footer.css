@@ -134,7 +134,7 @@ footer::before{
     height: 1px;
     top: 0px;
     content: "";
-    background: linear-gradient(to right, #ccc 0%, transparent 100%);
+    background: linear-gradient(to left, #ccc 0%, transparent 100%);
     z-index: 10;
 }
 #footer_link{
@@ -163,12 +163,12 @@ footer::before{
 }
 #footer_link li{
     position: relative;
-    font-size: 20px;
+    font-size: 16px;
 }
 #footer_link li::after{
     position: relative;
     content: "·";
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
     color: #ccc;
 }
