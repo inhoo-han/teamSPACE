@@ -5,6 +5,7 @@
     width: 100%;
     height: 100vh;
     background-image: url(../images/nightSky.jpg);
+    background-attachment: fixed;
 }
 
 /* * * * [S] #container * * * */
@@ -80,15 +81,14 @@
 }
 
 /* #earth_area */
-#earth_area{
+
+/*  옛날거...*/
+/*#earth_area{
     position: fixed;
     width: 100%;
     height: 200px;
     bottom: 0;
-    /* border: 1px solid yellow; */
     overflow: hidden;
-
-
 }
 #earth_area img{
     position: relative;
@@ -96,7 +96,24 @@
     left: 50%;
     margin-left: -100px;
     top: 0;
-    /* border: 1px solid red; */
     transform-origin: center top;
+} */
+
+/* ver.2*/
+#earth_area_v2{
+    position: absolute;
+    width: 800px;
+    height: 800px;
+    bottom: 0px;
+    left: 0px;
+    overflow: hidden;
 }
+#earth_area_v2 img{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    left: -400px;
+    bottom: -400px;
+}
+
 /* * * * [E] #container * * * */
