@@ -75,7 +75,7 @@ nav .menu>a{
     font-size: 20px;
     color: #ccc;
 }
-nav .menu>a::after{
+/* nav .menu>a::after{
     position: relative;
     content: "·";
     font-size: 20px;
@@ -84,7 +84,7 @@ nav .menu>a::after{
 }
 nav .menu:last-child>a::after{
     content: none;
-}
+} */
 
 nav .subMenu{
     display: none;
