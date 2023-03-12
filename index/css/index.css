@@ -12,7 +12,6 @@
 /* * * * [S] #container * * * */
 #container{
     position: relative;
-    /* border: 1px solid navy; */
 }
 /* #link_area */
 #space_area{
@@ -23,8 +22,6 @@
     background-size: 100%;
     background-position: center top;
     background-repeat: no-repeat;
-    /* background-attachment: fixed; */
-    /* border: 10px solid red; */
 }
 #space_area .skip{
     position: absolute;
@@ -42,7 +39,6 @@
     width: 100px;
 }
 #space_area .cele{
-    /* display: none; */
     position: absolute;
     width: 100%;
     bottom: 0;
@@ -51,25 +47,23 @@
     position: relative;
     width: 100%;
     height: 100vh;
-    /* border: 1px solid salmon; */
 }
 #space_area .cele li{
     position: absolute;
-    /* border: 1px solid yellow; */
 }
-#space_area .cele li.sun{
+#space_area .cele li.celestial1{
     left: 10%;
     top: 40%;
 }
-#space_area .cele li.nebula{
+#space_area .cele li.celestial2{
     left: 30%;
     top: 10%;
 }
-#space_area .cele li.galaxy{
+#space_area .cele li.celestial3{
     right: 30%;
     top: 10%;
 }
-#space_area .cele li.m1{
+#space_area .cele li.celestial4{
     right: 10%;
     top: 40%;
 }
@@ -80,24 +74,6 @@
 }
 
 /* #earth_area */
-
-/*  옛날거...*/
-/*#earth_area{
-    position: fixed;
-    width: 100%;
-    height: 200px;
-    bottom: 0;
-    overflow: hidden;
-}
-#earth_area img{
-    position: relative;
-    width: 200px;
-    left: 50%;
-    margin-left: -100px;
-    top: 0;
-    transform-origin: center top;
-} */
-
 /* ver.2*/
 #earth_area_v2{
     position: absolute;
