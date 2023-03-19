@@ -5,22 +5,34 @@ $(function() {
         let scroll_top = $(window).scrollTop();
         console.log('scroll : ' + scroll_top);
 
-        if(scroll_top < 1600){
-            $('.celestial1').stop().animate({
-                left: -300
-            }, 0)
-            $('.celestial2').stop().animate({
-                left: -300
-            }, 0)
-        }
-        if(scroll_top >= 1600){
-            $('.celestial1').stop().animate({
-                left: left_of_celestial1
-            }, 2000, 'easeOutElastic')
-            $('.celestial2').stop().animate({
-                left: left_of_celestial2
-            }, 1800, 'easeOutElastic')
-        }
+        // if(scroll_top < 1600){
+        //     $('.celestial1').stop().animate({
+        //         left: -300
+        //     }, 0)
+        //     $('.celestial2').stop().animate({
+        //         left: -300
+        //     }, 0)
+        //     $('.celestial3').stop().animate({
+        //         right: -300
+        //     }, 0)
+        //     $('.celestial4').stop().animate({
+        //         right: -300
+        //     }, 0)
+        // }
+        // if(scroll_top >= 1600){
+        //     $('.celestial1').stop().animate({
+        //         left: left_of_celestial1
+        //     }, 2000, 'easeOutElastic')
+        //     $('.celestial2').stop().animate({
+        //         left: left_of_celestial2
+        //     }, 1800, 'easeOutElastic')
+        //     $('.celestial3').stop().animate({
+        //         right: right_of_celestial3
+        //     }, 2000, 'easeOutElastic')
+        //     $('.celestial4').stop().animate({
+        //         right: right_of_celestial4
+        //     }, 1800, 'easeOutElastic')
+        // }
     });
 
     /* celestial영역 이미지 움직이는 부분*/
@@ -29,7 +41,9 @@ $(function() {
     let top_of_celestial2 = parseInt($('.celestial2').css('top'));
     let left_of_celestial2 = parseInt($('.celestial2').css('left'));
     let top_of_celestial3 = parseInt($('.celestial3').css('top'));
+    let right_of_celestial3 = parseInt($('.celestial3').css('right'));
     let top_of_celestial4 = parseInt($('.celestial4').css('top'));
+    let right_of_celestial4 = parseInt($('.celestial4').css('right'));
     // alert(top_of_celestial1);
     setInterval(() => {
         /* 첫 번째 천체 */
