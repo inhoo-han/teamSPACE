@@ -5,6 +5,7 @@ html,body, #wrap{
     position: relative;
     width: 100%;
     height: 100%;
+    min-width: 1100px;
 }
 /* 드래그 불가 */
 body {
@@ -149,6 +150,7 @@ nav .subMenu .smenu a{
     width: 20px;
     height: 20px;
     top: 4px;
+    /* filter: invert(0%); *//* 이미지 색상 변경 */
 }
 #header_search{
     position: absolute;
@@ -156,6 +158,8 @@ nav .subMenu .smenu a{
     width: 15%;
     right: 0px;
     top: 0px;
+    /*background-color: #000; */
+    /* display: none; */
     z-index: 10;
 }
 #header_search form{
@@ -176,6 +180,7 @@ nav .subMenu .smenu a{
     border: 3px solid #bababa;
     border-right: none;
     outline: none;
+    /* background-color: rgb(32,23,67); 기존 */
     background-color: #fff;
     font-size: 14px;
     color: #ccc;
@@ -193,6 +198,7 @@ nav .subMenu .smenu a{
     border-radius: 0 20px 20px 0;
     border: 3px solid #bababa;
     border-left: none;
+    /* background-color: rgb(32,23,67); 기존 */
     background-color: #fff;
     cursor: pointer;
 }
@@ -230,6 +236,10 @@ nav .subMenu .smenu a{
     text-align: center;
     margin: 10px 0;
 }
+/*index에서만 사용됨*/
+#polygon_area .poly_count.hidden{
+    visibility: hidden;
+}
 #polygon_border{
     position: relative;
     margin: 0 auto;
@@ -248,7 +258,6 @@ nav .subMenu .smenu a{
     left: 5px;
     background: #fff;
     font-size: 20px;
-    overflow: hidden;
     -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 }
@@ -265,52 +274,42 @@ nav .subMenu .smenu a{
     text-align: center;
     float: left;
 }
-#umbti_area .umbti_q{
-    position: relative;
-    width: 90%;
-    margin: 0 auto;
-    line-height: 40px;
-    font-family: 'sqneoHV';
-}
-#umbti_area .umbti_ans{
-    position: absolute;
-    width: 100%;
-    height: 0%;
-    bottom: 100px;
-}
-#umbti_area .umbti_btn{
-    position: relative;
-    width: 90%;
-    height: 40px;
-    margin: 10px auto;
-    border: 3px solid #7000ff;
-    background-color: #fff;
-    border-radius: 20px;
-    line-height: 34px;
-    font-family: 'sqneoEB';
-}
 #umbti_area .umbti_btn:hover{
     background-color: #7000ff;
     color: #fff;
-}
-#umbti_area .result_btn{
-    position: relative;
-    width: 90%;
-    height: 60px;
-    margin: 10px auto;
-    border: 3px solid #7000ff;
-    background-color: #fff;
-    border-radius: 40px;
-    line-height: 54px;
-    font-family: 'sqneoEB';
 }
 #umbti_area .result_btn:hover{
     background-color: #7000ff;
     color: #fff;
 }
-#polygon_area .our_name{
+.our_name{
     position: relative;
     width: 200px;
+    height: 50px;
+    margin: 0px auto;
+    font-family: 'sqneoEB';
+    text-align: center;
+    border: 3px solid #7000ff;
+    border-radius: 25px;
+    background-color: #fff;
+    line-height: 44px;
+}
+.umbti_title{
+    position: absolute;
+    left: 50%;
+    top: 300px;
+    width: 700px;
+    margin-left: -350px;
+    padding: 10px 0;
+    font-size: 50px;
+    font-family: 'sqneoEB';
+    text-align: center;
+    z-index: 10;
+    background-color: #fff;
+}
+.umbti_start{
+    position: relative;
+    width: 300px;
     height: 50px;
     margin: 30px auto;
     font-family: 'sqneoEB';
@@ -319,24 +318,6 @@ nav .subMenu .smenu a{
     border-radius: 25px;
     background-color: #fff;
     line-height: 44px;
-}
-#polygon_area .prev_arrow.show{
-    display: block;
-    position: absolute;
-    width: 60px;
-    height: 30px;
-    bottom: 50px;
-    left: 150px;
-    margin: 0 auto;
-    transform: scaleX(-1);
-    background-image: url(../images/icons.png);
-    background-position: 11% 15%;
-    transition: transform 0.5s;
-    cursor: pointer;
-    z-index: 10;
-}
-#polygon_area .prev_arrow.hidden{
-    display: none;
 }
 
 /* * * * * * * * * * footer 영역 * * * * * * * * * */
