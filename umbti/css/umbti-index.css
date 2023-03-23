@@ -263,7 +263,7 @@ nav .subMenu .smenu a{
 }
 #umbti_area{
     position: relative;
-    width: 4968px;
+    width: 400px;
     height: 450px;
 }
 #umbti_area .umbti{
@@ -282,7 +282,7 @@ nav .subMenu .smenu a{
     background-color: #7000ff;
     color: #fff;
 }
-.our_name{
+#umbti_area .our_name{
     position: relative;
     width: 200px;
     height: 50px;
@@ -294,7 +294,7 @@ nav .subMenu .smenu a{
     background-color: #fff;
     line-height: 44px;
 }
-.umbti_title{
+#polygon_area .umbti_title{
     position: absolute;
     left: 50%;
     top: 300px;
@@ -307,7 +307,7 @@ nav .subMenu .smenu a{
     z-index: 10;
     background-color: #fff;
 }
-.umbti_start{
+#polygon_area .umbti_start{
     position: relative;
     width: 300px;
     height: 50px;
@@ -319,7 +319,11 @@ nav .subMenu .smenu a{
     background-color: #fff;
     line-height: 44px;
 }
-
+#polygon_area .umbti_now{
+    position: relative;
+    text-align: center;
+    top: -20px;
+}
 /* * * * * * * * * * footer 영역 * * * * * * * * * */
 footer{
     position: absolute;
