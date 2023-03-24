@@ -90,17 +90,6 @@ nav .menu>a{
     color: rgb(32,32,55);
     font-family: 'sqneoEB';
 }
-/* nav .menu>a::after{
-    position: relative;
-    content: "·";
-    font-size: 20px;
-    font-weight: bold;
-    color: #ccc;
-}
-nav .menu:last-child>a::after{
-    content: none;
-} */
-
 nav .subMenu{
     display: none;
     background-color: transparent;
@@ -318,6 +307,7 @@ nav .subMenu .smenu a{
     border-radius: 25px;
     background-color: #fff;
     line-height: 44px;
+    cursor: pointer;
 }
 #polygon_area .umbti_now{
     position: relative;
