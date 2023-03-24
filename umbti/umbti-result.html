@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>우나엠비티아이</title>
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/umbti.css">
+    <link rel="stylesheet" href="css/umbti-result.css">
     <script src="js/jquery-3.6.3.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/dep_menu.js"></script>
@@ -75,135 +75,52 @@
             <!-- 이미지+타이틀 추가해야 함 -->
             <!-- width 65%인 내용 영역 -->
             <div id="polygon_area">
-                <!-- 상단 진행도 숫자표시 영역 -->
-                <div class="poly_count"><span class="num_ing">1</span>/12</div>
-                <!-- 육각형 영역 테두리 -->
-                <div id="polygon_border">
-                    <!-- 육각형 영역 내부 -->
-                    <div id="polygon">
-                        <!-- 내부 진행도 표시 영역 // 잠시보류! -->
-                        <div class="poly_ing"></div>
-                        <!-- umbti질문지 및 선택지*12 영역 -->
-                        <div id="umbti_area">
-                            <!-- 1 -->
-                            <div class="umbti umbti1">
-                                <p class="umbti_q">umbti의 협곡에 오신 것을 환영합니다.<br>문장을 꼼꼼히 읽어주세요.</p>
-                                <div class="umbti_ans">
-                                    <p class="umbti_btn umbti_btn1">입장하기</p>
-                                    <p class="umbti_btn umbti_btn2">입장 안 하기는 없습니다.</p>
-                                </div>
-                            </div>
-                            <!-- 2 -->
-                            <div class="umbti umbti2">
-                                <p class="umbti_q">한 줄 일 때는 이렇게 보여요</p>
-                                <div class="umbti_ans">
-                                    <p class="umbti_btn umbti_btn1">우와</p>
-                                    <p class="umbti_btn umbti_btn2">신기하다</p>
-                                </div>
-                            </div>
-                            <!-- 3 -->
-                            <div class="umbti umbti3">
-                                <p class="umbti_q">두 줄 일 때는<br>이렇게 보여요.</p>
-                                <div class="umbti_ans">
-                                    <p class="umbti_btn umbti_btn1">두 줄이 가장</p>
-                                    <p class="umbti_btn umbti_btn2">안정적인 구조입니다.</p>
-                                </div>
-                            </div>
-                            <!-- 4 -->
-                            <div class="umbti umbti4">
-                                <p class="umbti_q">세 줄 일 때는<br>이렇게<br>보여요</p>
-                                <div class="umbti_ans">
-                                    <p class="umbti_btn umbti_btn1">더 많은 글자가 보고싶다면</p>
-                                    <p class="umbti_btn umbti_btn2">하세요 클릭</p>
-                                </div>
-                            </div>
-                            <!-- 5 -->
-                            <div class="umbti umbti5">
-                                <p class="umbti_q">따로 줄바꿈을 하지 않아도 자동적으로 줄바꿈이 됩니다. 왜냐? 그렇게 설정했으니까요.</p>
-                                <div class="umbti_ans">
-                                    <p class="umbti_btn umbti_btn1">별거 아닌데</p>
-                                    <p class="umbti_btn umbti_btn2">대단한 척 함</p>
-                                </div>
-                            </div>
-                            <!-- 6 -->
-                            <div class="umbti umbti6">
-                                <p class="umbti_q">네 줄은 없어요</p>
-                                <div class="umbti_ans">
-                                    <p class="umbti_btn umbti_btn1">네 줄도 궁금하다면</p>
-                                    <p class="umbti_btn umbti_btn2"></p>
-                                </div>
-                            </div>
-                            <!-- 7 -->
-                            <div class="umbti umbti7">
-                                <p class="umbti_q">네<br>줄<br>짜<br>리</p>
-                                <div class="umbti_ans">
-                                    <p class="umbti_btn umbti_btn1">넘쳐용</p>
-                                    <p class="umbti_btn umbti_btn2">네줄 불가</p>
-                                </div>
-                            </div>
-                            <!-- 8 -->
-                            <div class="umbti umbti8">
-                                <p class="umbti_q">상단 숫자 진행도는 보셨겠죠?</p>
-                                <div class="umbti_ans">
-                                    <p class="umbti_btn umbti_btn1">엥 그런게?</p>
-                                    <p class="umbti_btn umbti_btn2">고롬고롬 봤지</p>
-                                </div>
-                            </div>
-                            <!-- 9 -->
-                            <div class="umbti umbti9">
-                                <p class="umbti_q">뒤로가기 버튼은 눌러보셨나요?</p>
-                                <div class="umbti_ans">
-                                    <p class="umbti_btn umbti_btn1">눌러봤다</p>
-                                    <p class="umbti_btn umbti_btn2">이제 눌러 보겠다</p>
-                                </div>
-                            </div>
-                            <!-- 10 -->
-                            <div class="umbti umbti10">
-                                <p class="umbti_q">1페이지에서 2페이지로 넘어가면 뒤로가기 버튼이 생깁니다.</p>
-                                <div class="umbti_ans">
-                                    <p class="umbti_btn umbti_btn1">알고 있었다</p>
-                                    <p class="umbti_btn umbti_btn2">몰랐다</p>
-                                </div>
-                            </div>
-                            <!-- 11 -->
-                            <div class="umbti umbti11">
-                                <p class="umbti_q">뒤로 갔을 때 이전에 선택한 버튼이 남아있으면 좋겠다, 아니다?</p>
-                                <div class="umbti_ans">
-                                    <p class="umbti_btn umbti_btn1">남았으면 좋겠다</p>
-                                    <p class="umbti_btn umbti_btn2">없는게 더 좋다</p>
-                                </div>
-                            </div>
-                            <!-- 12 -->
-                            <div class="umbti umbti12">
-                                <p class="umbti_q">사실 남길 수는 없습니다. 기술적인 한계.</p>
-                                <div class="umbti_ans">
-                                    <p class="umbti_btn umbti_btn1">...</p>
-                                    <p class="umbti_btn umbti_btn2">12번까지 끝!</p>
-                                </div>
-                            </div>
-                            <!-- 결과창 -->
-                            <div class="umbti umbti_result">
-                                <p class="umbti_q">모든 문항이 끝났습니다!<br>개발자도구에서 콘솔창을 확인해주세요.</p>
-                                <div class="umbti_ans">
-                                    <p class="result_btn">결과보기</p>
-                                </div>
-                            </div>
-                            <!-- sample -->
-                            <!-- <div class="umbti umbti8">
-                                <p class="umbti_q">우리팀의 주제가 우주로 결정되었다.<br>이 때, 나의 행동은?</p>
-                                <div class="umbti_ans">
-                                    <p class="umbti_btn umbti_btn1">우주? 사전조사 바로 진행</p>
-                                    <p class="umbti_btn umbti_btn2">우와, 우주라니 멋있다!</p>
-                                </div>
-                            </div> -->
+                <!-- 메인 육각형 영역 테두리 -->
+                <div id="poly_main" class="polygon_border">
+                    <!-- 메인 육각형 영역 내부 -->
+                    <div class="polygon">
+                        <!-- 결과 출력 영역 -->
+                        <div class="umbti_area">
+                            <p class="umbti_head">당신과 닮은 행성은</p>
+                            <p class="umbti_result_name">토성</p>
+                            <p class="umbti_result_explanation">토성을 닮은 당신은
+                                고리가 있을 수도 있고 어쩌면
+                                훌라후프를 잘 돌릴 수도 있다.
+                                뭐 이런 식의 핵심을 찌르는 척 하는
+                                멘트를 적는다.</p>
+                            <img src="images/saturn.png" alt="토성이미지">
                         </div>
-                        <div class="prev_arrow"></div>
+                    </div>
+                </div>
+                <!-- 나와 잘 맞는 육각형 영역 테두리 -->
+                <div id="poly_good" class="sub_polygon_border">
+                    <!-- 서브 육각형 영역 내부 -->
+                    <div class="sub_polygon">
+                        <!-- 서브 결과 출력 영역 -->
+                        <div class="umbti_area">
+                            <p class="umbti_head">사이가 좋은 행성</p>
+                            <p class="umbti_result_name">목성</p>
+                            <img src="images/planet_1.png" alt="목성이미지">
+                        </div>
+                    </div>
+                </div>
+                <!-- 나와 안 맞는 육각형 영역 테두리 -->
+                <div id="poly_bad" class="sub_polygon_border">
+                    <!-- 서브 육각형 영역 내부 -->
+                    <div class="sub_polygon">
+                        <!-- 서브 결과 출력 영역 -->
+                        <div class="umbti_area">
+                            <p class="umbti_head">사이가 나쁜 행성</p>
+                            <p class="umbti_result_name">천왕성</p>
+                            <img src="images/blue1.png" alt="천왕성이미지">
+                        </div>
                     </div>
                 </div>
                 <!-- 하단 '우나프로젝트' 영역 -->
-                <div class="our_name" title="홈으로 이동 or 우나프로젝트 설명으로 이동" onclick="location.href='../index/index.html'">
-                    우나프로젝트
+                <div class="test_restart" onclick="location.href='umbti.html'">
+                    테스트 다시하기
                 </div>
+                <div class="share">링크로 공유하기</div>
             </div>
         </div>
         <!---------- [E] container ---------->

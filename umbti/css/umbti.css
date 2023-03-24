@@ -320,6 +320,7 @@ nav .subMenu .smenu a{
     border-radius: 25px;
     background-color: #fff;
     line-height: 44px;
+    cursor: pointer;
 }
 #polygon_area .prev_arrow.show{
     display: block;
