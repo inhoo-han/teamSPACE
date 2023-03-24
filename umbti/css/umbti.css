@@ -288,6 +288,7 @@ nav .subMenu .smenu a{
     border-radius: 20px;
     line-height: 34px;
     font-family: 'sqneoEB';
+    cursor: pointer;
 }
 #umbti_area .umbti_btn:hover{
     background-color: #7000ff;
