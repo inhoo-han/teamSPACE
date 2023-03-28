@@ -222,7 +222,6 @@ nav .subMenu .smenu a{
 #sub_page_h2{
     position: absolute;
     width: 85%;
-    /* border: 1px solid; */
     height: 95px; /* 크기 맞추기 */
     bottom: 0;
     font-size: 100px;
