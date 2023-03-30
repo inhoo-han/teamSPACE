@@ -75,14 +75,12 @@ header::after{
     font-size: 23px;
     line-height: 50px;
 }
-.bookmark_li:nth-child(2){
-    background-color: #999;
-}
-.bookmark_li:nth-child(3){
-    /* border-right: 2px solid rgb(32,32,55); */
-}
 .bookmark_li:last-child{
+    background-color: #555;
     border-bottom: none;
+}
+.bookmark_li:nth-child(5)>a{
+    color: #fff;
 }
 .bookmark_li>a{
     display: inline-block;
@@ -391,6 +389,10 @@ nav .subMenu .smenu a{
     background-color: #fff;
     line-height: 44px;
     cursor: pointer;
+}
+#polygon_area .umbti_start:hover{
+    background-color: #7000ff;
+    color: #fff;
 }
 #polygon_area .umbti_now{
     position: relative;

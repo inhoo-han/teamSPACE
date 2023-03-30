@@ -105,7 +105,7 @@ $(function() {
     $(".bookmark_li>a").hover(function(){
         $(this).css({
             transition: "ease 0.4s",
-            backgroundColor : "orange",
+            backgroundColor : "#555",
             color : "#fff"
         })
     }, function(){
@@ -113,8 +113,8 @@ $(function() {
             backgroundColor : "#f0f0f0",
             color : "#555"
         })
-        $(".bk_li_1>a").css({
-            backgroundColor : "orange",
+        $(".bk_li_4>a").css({
+            backgroundColor : "#555",
             color : "#fff"
         })
     })

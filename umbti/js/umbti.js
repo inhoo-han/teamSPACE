@@ -1,4 +1,7 @@
 $(function() {
+    let now_num;
+
+    /* umbti.html */
     let index;
     let choice_index = new Array(12);
     
