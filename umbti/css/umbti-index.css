@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 /* * * * * * * * * * header 영역 * * * * * * * * * */
-html,body, #wrap{
+html,body,#wrap{
     position: relative;
     width: 100%;
     height: 100%;
