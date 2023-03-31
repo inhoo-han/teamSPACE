@@ -5,14 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>나의 사진관</title>
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/header&footer.css">
     <link rel="stylesheet" href="css/photozone.css">
     <script src="js/jquery-3.6.3.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/dep_menu.js"></script>
-    <script src="js/photozone.js"></script>
     <script src="js/header&footer.js"></script>
+    <script src="js/photozone.js"></script>
+    <script src="js/html2canvas.min.js"></script>
 </head>
 <body>
     <!-------------------- [S] #wrap -------------------->
@@ -91,7 +93,8 @@
             <div id="photo_area">
                 <!-- 선택된 사진이 뜨는 영역. 비율 16:9 -->
                 <div id="photo_onload">
-                    <img src="" alt="">
+                    <p class="photo_choice_notice">배경사진을 선택해주세요</p>
+                    <img id="bg_img_click" src="" alt="">
                     <div id="load_zone">
                         <div class="user_photo_div">
                             <img id="user_photo" src="images/mycat.png" alt="">
@@ -103,7 +106,7 @@
                     <div id="choice_zone">
                         <div class="bg_img bg_img1"><img src="images/jameswebb01.jpg" alt=""></div>
                         <div class="bg_img bg_img2"><img src="images/jameswebb02.jpg" alt=""></div>
-                        <div class="bg_img bg_img3"><img src="images/jameswebb04.jpg" alt=""></div>
+                        <div class="bg_img bg_img3"><img src="images/jameswebb03.jpg" alt=""></div>
                         <div class="bg_img bg_img4"><img src="images/bg_sample.jpeg" alt=""></div>
                     </div>
                 </div>
@@ -115,7 +118,7 @@
                         <input type="file" id="p_upload" name="p_upload" accept="images/*">
                     </div>
                     <!-- 사진 다운로드 영역 -->
-                    <div id="photo_download"><p>사진 저장하기</p></div>
+                    <div id="photo_download" onclick="downImg()"><p>사진 저장하기</p></div>
                 </div>
             </div>
         </div>
