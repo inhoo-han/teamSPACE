@@ -24,9 +24,10 @@
 #photo_onload{
     position: relative;
     width: 100%;
+    margin: 0;
+    padding: 0;
     aspect-ratio: 16/9; /*16:9비율*/
     background-color: #ccc;
-    border: 3px solid #000;
     overflow: hidden;
 }
 #photo_onload p{
@@ -45,6 +46,8 @@
 }
 #load_zone{
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     overflow: hidden;
