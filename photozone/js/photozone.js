@@ -8,9 +8,17 @@ $(function() {
         $('#bg_img_click').attr('src', sampleSRC);
     });
     /* user_photo 리사이즈, 드래그 */
-    $('.user_photo_div').resizable({
+    let user_photo_width = $('#user_photo').width();
+    let user_photo_height = $('#user_photo').height();
+    let user_photo_ratio = user_photo_height/user_photo_width;
+
+    $('#user_photo').resizable({
         minWidth: 100,
-        maxWidth: 500
+        maxWidth: 400,
+        aspectRatio: true,
+        handles: 'all'
+    }).css({
+        // height: width * user_photo_ratio
     });            
     $('.user_photo_div').draggable({
         scroll: false,
