@@ -26,9 +26,9 @@
 #photo_onload{
     position: relative;
     width: 99.99%;
-     /*16:9비율*/
+     /*4:3비율*/
     --onloadWidth: 940px;
-    height: calc(var(--onloadWidth) * 9 / 16);
+    height: calc(var(--onloadWidth) * 3 / 4);
     padding: 0;
     background-color: #ccc;
     overflow: hidden;
@@ -104,6 +104,10 @@
 #choice_zone .bg_img:last-child{
     margin-right: 1%;
 }
+#choice_zone .bg_img:hover>img{
+    transform: scale(1.05);
+    transition: all 0.3s;
+}
 #choice_zone .bg_img img{
     position: relative;
     width: 100%;
@@ -111,7 +115,7 @@
     float: left;
 }
 /* 업로드, 다운로드 영역 */
-#photo_btn{
+#photo_btn_area{
     position: relative;
     width: 100%;
     height: 150px;
@@ -127,6 +131,9 @@
     border-radius: 20px;
     background-color: #7000ff;
     text-align: center;
+}
+#photo_upload:hover, #photo_download:hover{
+    top: 48px;
 }
 #photo_upload{
     float: left;
