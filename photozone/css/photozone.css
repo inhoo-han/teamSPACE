@@ -10,7 +10,7 @@
     position: relative;
     width: 100%;
     height: 70%;
-    background-color: transparent;
+    background-color: #fff;
     margin-bottom: 80px;
 }
 /* width 65%영역 */
@@ -19,14 +19,17 @@
     width: 65%;
     height: auto;
     margin: 0 auto;
+    z-index: 100;
+    border: 10px solid #000;
 }
 /* 선택된 사진이 뜨는 영역 */
 #photo_onload{
     position: relative;
-    width: 100%;
-    margin: 0;
+    width: 99.99%;
+     /*16:9비율*/
+    --onloadWidth: 940px;
+    height: calc(var(--onloadWidth) * 9 / 16);
     padding: 0;
-    aspect-ratio: 16/9; /*16:9비율*/
     background-color: #ccc;
     overflow: hidden;
 }
@@ -40,9 +43,11 @@
     font-style: italic;
     color: #aaa;
 }
-#photo_onload img{
+#bg_img_click{
     position: absolute;
-    width: 100%;
+    left: 1px;
+    width: 99.99%;
+    min-height: 99.99%;
 }
 #load_zone{
     position: absolute;
@@ -50,12 +55,14 @@
     left: 0;
     width: 100%;
     height: 100%;
+    /* width: 99.99%;
+    height: 99.99%; */
     overflow: hidden;
 }
 #load_zone .user_photo_div{
     position: absolute;
     width: 100px;
-    height: 200px;
+    height: auto;
     z-index: 10;
 }
 #load_zone .user_photo_div::after{
@@ -65,7 +72,8 @@
 }
 #user_photo{
     position: absolute;
-    width: 100px;
+    width: 100%;
+    height: auto;
 }
 /* 사진 선택 영역 */
 #photo_choice{
@@ -74,6 +82,7 @@
     height: 200px;
     background: #000;
     overflow: hidden;
+    border: 3px solid #000;
 }
 #choice_zone{
     position: relative;
@@ -84,7 +93,7 @@
 #choice_zone .bg_img{
     position: relative;
     margin-right: 2%;
-    width: 23%;
+    width: calc((100% / 4) - 2%);
     aspect-ratio: 4/3;
     float: left;
     overflow: hidden;

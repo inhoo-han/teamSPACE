@@ -2,6 +2,7 @@ $(function() {
     /* 배경사진 선택 시 변경 */
     $('#choice_zone').find('img').click(function() {
         $('.photo_choice_notice').css('display','none');
+        $('#photo_onload').css('background-color','#000');
         let sampleSRC = $(this).attr('src');
         // alert(sampleSRC);
         $('#bg_img_click').attr('src', sampleSRC);
@@ -11,7 +12,14 @@ $(function() {
         minWidth: 100,
         maxWidth: 500
     });            
-    $('.user_photo_div').draggable();   
+    $('.user_photo_div').draggable({
+        scroll: false,
+        revert: 'invalid'
+    });
+    $('#load_zone').droppable({
+        accept: '.user_photo_div',
+        drop: function(event, ui){}
+    });
 
     /* 사진 업로드 후 user_photo적용 영역 */
     $(":input[name='p_upload']").change(function() {
