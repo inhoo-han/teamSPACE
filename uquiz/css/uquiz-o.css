@@ -75,16 +75,16 @@ html,body,#wrap{
     position: relative;
     font-family: 'sqneoEB';
     font-size: 20px;
-    color: #000;
+    color: #333;
     top: 20px;
     text-align: center;
 }
 #polygon_text .result_contents{
     position: relative;
-    top: 45px;
+    top: 200px;
     font-family: 'sqneoHV';
     font-size: 80px;
-    color: #000;
+    color: #333;
     text-align: center;
 }
 #polygon_text .answer{
@@ -106,16 +106,35 @@ html,body,#wrap{
     bottom: 30px;
     left: 50%;
     margin-left: -130px;
-    font-family: 'sqneoEB';
-    font-size: 20px;
     border: none;
     border-radius: 25px;
     background-image: linear-gradient(92.29deg, #7000FF 0%, #c392ff 100%);
-    color: #fff;
     cursor: pointer;
-    transition: background-image 2s;
 }
-#polygon_text .submit_btn:hover{
-    background-image: linear-gradient(92.29deg, #c392ff 0%, #7000FF 100%);
-
+#polygon_text .submit_btn::before{
+    content: '';
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    border-radius: 25px;
+    background-image:linear-gradient(92.29deg, #c392ff 0%, #7000FF 100%);
+    opacity: 0;
+    transition: all 1.5s;
+}
+#polygon_text .submit_btn:hover::before{
+    opacity: 1;
+}
+#polygon_text .submit_btn span{
+    position: absolute;
+    display: block;
+    width: 260px;
+    top: 0;
+    left: 0;
+    line-height: 50px;
+    font-family: 'sqneoEB';
+    font-size: 20px;
+    color: #fff;
+    z-index: 100;
 }
