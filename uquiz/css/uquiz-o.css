@@ -15,15 +15,17 @@ html,body,#wrap{
 #container{
     position: relative;
     width: 100%;
-    height: 70%;
+    height: 700px;
     background-color: transparent;
     margin: 0 auto;
+    border: 3px solid salmon;
 }
 #uquiz_area{
     position: relative;
     width: 65%;
     height: 100%;
     margin: 0 auto;
+    
 }
 #polygon5{
     position: relative;
@@ -99,7 +101,7 @@ html,body,#wrap{
     background-color: #ddd;
     /* box-sizing: border-box; */
 }
-#polygon_text .submit_btn{
+#polygon_text .uquiz_btn{
     position: absolute;
     width: 260px;
     height: 50px;
@@ -111,7 +113,7 @@ html,body,#wrap{
     background-image: linear-gradient(92.29deg, #7000FF 0%, #c392ff 100%);
     cursor: pointer;
 }
-#polygon_text .submit_btn::before{
+#polygon_text .uquiz_btn::before{
     content: '';
     position: absolute;
     left: 0px;
@@ -123,10 +125,10 @@ html,body,#wrap{
     opacity: 0;
     transition: all 1.5s;
 }
-#polygon_text .submit_btn:hover::before{
+#polygon_text .uquiz_btn:hover::before{
     opacity: 1;
 }
-#polygon_text .submit_btn span{
+#polygon_text .uquiz_btn span{
     position: absolute;
     display: block;
     width: 260px;
