@@ -89,4 +89,9 @@ function calendarInit() {
         thisMonth = new Date(currentYear, currentMonth + 1, 1);
         renderCalender(thisMonth); 
     });
+
+    // 문제 풀었을 때 표시(수정 중)
+    $('.current.today').on('click', function() {
+        
+    });
 }
