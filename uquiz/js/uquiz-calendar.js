@@ -91,7 +91,19 @@ function calendarInit() {
     });
 
     // 문제 풀었을 때 표시(수정 중)
-    $('.current.today').on('click', function() {
-        
+    // 배열로 안 해서 오류 있음. DB연결시 수정예정
+    let dayClickSw = false;
+    $('.day.current').on('click', function() {
+        dayClickSw = !dayClickSw;
+        if(dayClickSw){
+            $(this).css({
+                border: '3px solid var(--main-color)',
+                borderRadius: '25px'
+            });
+        } else{
+            $(this).css({
+                border: '0px solid #000'
+            })
+        }
     });
 }

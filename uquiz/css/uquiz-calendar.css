@@ -3,6 +3,7 @@
 :root{
     --polygon: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
     --polygon-color: #7000FF 0%, #9E52FF 70.1%, #FFFFFF 98.97%;
+    --main-color: #7000FF;
 }
 /* * * * * * * * * * header 영역 * * * * * * * * * */
 html,body,#wrap{
@@ -164,7 +165,7 @@ html,body,#wrap{
     color: #999;
     font-size: 12px;
     text-align: center;
-    border-radius:5px
+    border-radius:5px;
 }
 
 .current.today {background: rgb(242 242 242);}
@@ -181,15 +182,19 @@ html,body,#wrap{
     flex-flow: wrap;
     height: 290px;
 }
-
+.sec_cal .cal_wrap .dates .day{
+    cursor: pointer;
+    box-sizing: border-box;
+}
+/*토요일*/
 .sec_cal .cal_wrap .day:nth-child(7n -1) {
     color: #3c6ffa;
 }
-
+/*일요일*/
 .sec_cal .cal_wrap .day:nth-child(7n) {
     color: #ed2a61;
 }
-
+/*이전달, 다음달*/
 .sec_cal .cal_wrap .day.disable {
     color: #ddd;
 }
