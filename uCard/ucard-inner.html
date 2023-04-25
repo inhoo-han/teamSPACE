@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/jquery-ui.min.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/header&footer.css">
-    <link rel="stylesheet" href="css/uCard-index.css">
+    <link rel="stylesheet" href="css/ucard-inner.css">
     <link rel="shortcut icon" type="image/icon" sizes="32*32" href="images/header/logoSample2.png">
     <script src="js/jquery-3.6.3.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
@@ -90,9 +90,7 @@
             <!-- width 65%인 내용 영역 -->
             <div id="ucard_area">
                 <!-- 프로젝트 이름 영역 -->
-                <div class="our_name">
-                    <a href="#">우나프로젝트</a>
-                </div>
+                <div class="our_name">우나프로젝트</div>
                 <!-- 게임방법, 게임시작, 랭킹 버튼 영역 -->
                 <div id="polygon_game_btn_area">
                     <div class="polygon_game_btn howto">
@@ -100,19 +98,19 @@
                             <p>게임<br>방법</p>
                         </div>
                     </div>
-                    <div class="polygon_game_btn howto">
+                    <div class="polygon_game_btn gamestart">
                         <div class="poly_game_btn_inner" onclick="location.href='ucard-gamestart.html'">
                             <p>게임<br>시작</p>
                         </div>
                     </div>
-                    <div class="polygon_game_btn howto">
+                    <div class="polygon_game_btn ranking">
                         <div class="poly_game_btn_inner" onclick="location.href='ucard-ranking.html'">
                             <p>랭킹<br>확인</p>
                         </div>
                     </div>
                 </div>
                 <!-- 하단 육각형 게임 로고 영역 -->
-                <div id="polygon_area">
+                <div id="polygon_area" onclick="location.href='ucard-index.html'">
                     <!-- 왼쪽 poly는 테두리가 필요해서 내부 poly 존재-->
                     <div class="polygon poly_left">
                         <div class="poly_left_inner">
@@ -123,10 +121,6 @@
                     <div class="polygon poly_right">
                         <p class="poly_right_p">뒤집기</p>
                     </div>
-                </div>
-                <!-- 시작하기 버튼 영역 -->
-                <div class="ucard_start" title="" onclick="location.href='ucard-inner.html'">
-                    입장하기
                 </div>
             </div>
         </div>

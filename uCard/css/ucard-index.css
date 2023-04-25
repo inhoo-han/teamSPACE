@@ -84,9 +84,6 @@ body {
     -webkt-clip-path: var(--polygon-tb);
     clip-path: var(--polygon-tb);
 }
-.poly_right{
-
-}
 .polygon p{
     position: relative;
     margin: 0 auto;
