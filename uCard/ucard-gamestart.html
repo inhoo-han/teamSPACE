@@ -94,8 +94,34 @@
                 <div class="our_name">우나프로젝트</div>
                 <!-- 게임영역 -->
                 <div id="game_area">
-                    <div id="div_gameBoard" class="gameBoard" style="border: 1px solid black; height: 900px; width: 1200px; padding: 5px;">
+                    <div id="div_gameBoard" class="gameBoard">
                         <p>게임판</p>
+                    </div>
+                    <!-- 사이드 영역 -->
+                    <div class="side right">
+                        <div class="btnArea">
+                            <input type="button" id="btn_start" name="btn_start" value="시작" /> &nbsp;&nbsp;
+				            <input type="button" id="btn_restart" name="btn_restart" value="재시작" style="visibility: hidden;">
+                        </div>
+                    </div>
+                    <!-- 일단 이름 똑같이 줌. 추후 수정! -->
+                    <div id="div_addPlayer">
+                        <table id="tbl_addPlayer">
+                            <tr>
+                                <td>이름</td>
+                                <td>: <input type="text" name="name"></td>
+                            </tr>
+                        </table>
+                        <table id="tbl_score"
+                            <tr>
+                                <td>횟수</td>
+                                <td>n 번</td>
+                            </tr>
+                            <tr>
+                                <td>시간</td>
+                                <td>00:00:00</td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
                 <!-- 하단 육각형 게임 로고 영역 -->
