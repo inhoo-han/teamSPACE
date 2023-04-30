@@ -106,8 +106,14 @@
                                 </tr>
                             </table> -->
                         </div>
-                        <div id="div_gameBoard" class="gameBoard">
-                            <p>게임판</p>
+                        <div id="div_gameBoard" class="gameBoard"></div>
+                        
+                        <div id="game_over" style="z-index: -1;">
+                            <span id="game_score_count">0</span><span>번 만에 카드를 다 맞추셨습니다.</span>
+                            <p>
+                                <span class="game_over_span game_over_span_lf" onclick="location.href='ucard-gamestart.html'">다시 시작하기</span>
+                                <span class="game_over_span game_over_span_rg" onclick="location.href='ucard-ranking.html'">랭킹 보러가기</span>
+                            </p>
                         </div>
                     </div>
                     &nbsp;&nbsp;
@@ -117,25 +123,23 @@
                             <input type="button" id="btn_restart" name="btn_restart" value="재시작" style="visibility: hidden;">
                         </div>	
                         <br/>
-                        <div id="div_addPlayer" style="border: 1px solid black; padding: 3px;">
+                        <div id="div_addPlayer">
                             <table id="tbl_addPlayer">
-                                <tr>
+                                <tr class="tbl_addPlayer_tr1">
                                     <td>참가자</td>
                                     <td>: ${id}</td>
                                 </tr>
-                                <tr>
+                                <tr class="tbl_addPlayer_tr2">
                                     <td>횟수</td>
-                                    <td class="click_count">: n번</td>
+                                    <td>: <span id="click_count"></span>번</td>
                                 </tr>
-                                <tr>
+                                <tr class="tbl_addPlayer_tr3">
                                     <td>시간</td>
                                     <td>: 00:00:00</td>
                                 </tr>
                             </table>
             
                             <br/>
-                        </div>
-                        <div id="div_playerBoard" style="visibility: hidden; border: 1px solid black;">
                         </div>
                         <br/><br/>
                         <!-- <progress value="0" max="10" id="progressBar" ></progress> -->
