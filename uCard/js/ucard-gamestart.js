@@ -1,339 +1,459 @@
-//https://drcode-devblog.tistory.com/m/215
-//HashMap 객체 생성
-let JqMap = function() {
-    this.map = new Object();
-}
+		/* HashMap 객체 생성 */
+		var JqMap = function(){
+		    this.map = new Object();
+		}
+		 
+		JqMap.prototype = {
+		    /* key, value 값으로 구성된 데이터를 추가 */
+		    put: function (key, value) {
+		        this.map[key] = value;
+		    },
+		    /* 지정한 key값의 value값 반환 */
+		    get: function (key) {
+		        return this.map[key];
+		    },
+		    /* 구성된 key 값 존재여부 반환 */
+		    containsKey: function (key) {
+		        return key in this.map;
+		    },
+		    /* 구성된 value 값 존재여부 반환 */
+		    containsValue: function (value) {
+		        for (var prop in this.map) {
+		            if (this.map[prop] == value) {
+		                return true;
+		            }
+		        }
+		        return false;
+		    },
+		    /* 구성된 데이터 초기화 */
+		    clear: function () {
+		        for (var prop in this.map) {
+		            delete this.map[prop];
+		        }
+		    },
+		    /*  key에 해당하는 데이터 삭제 */
+		    remove: function (key) {
+		        delete this.map[key];
+		    },
+		    /* 배열로 key 반환 */
+		    keys: function () {
+		        var arKey = new Array();
+		        for (var prop in this.map) {
+		            arKey.push(prop);
+		        }
+		        return arKey;
+		    },
+		    /* 배열로 value 반환 */
+		    values: function () {
+		        var arVal = new Array();
+		        for (var prop in this.map) {
+		            arVal.push(this.map[prop]);
+		        }
+		        return arVal;
+		    },
+		    /* Map에 구성된 개수 반환 */
+		    size: function () {
+		        var count = 0;
+		        for (var prop in this.map) {
+		            count++;
+		        }
+		        return count;
+		    }
+		}
 
-JqMap.prototype = {
-    //key와 value로 구성된 데이터를 추가
-    put: function(key, value) {
-        this.map[key] = value;
-    },
-    //지정한 key의 value 반환
-    get: function(key) {
-        return this.map[key]
-    },
-    //구성된 key 존재 여부 반환
-    containsKey: function(key) {
-        return key in this.map;
-    },
-    //구성된 value 값 존재여부 반환
-    containsValue: function(value) {
-        for(let prop in this.map) {
-            if(this.map[prop] == value) {
-                return true;
-            }
-        }
-    },
-    //구성된 데이터 초기화
-    clear: function() {
-        for (let prop in this.map) {
-            delete this.map[prop]
-        }
-    },
-    //key에 해당하는 데이터 삭제
-    remove: function(key) {
-        delete this.map[key];
-    },
-    //배열로 key 반환
-    keys: function() {
-        let arKey = new Array();
-        for(let prop in this.map) {
-            arKey.push(map);
-        }
-        return arKey;
-    },
-    //배열로 value 반환
-    values: function() {
-        let arVal = new Array();
-        for(let prop in this.map) {
-            arVal.push(this.map[prop]);
-        }
-        return arVal;
-    },
-    //Map에 구성된 개수 반환
-    size: function() {
-        let count = 0;
-        for(let prop in this.map) {
-            count++;
-        }
-        return count;
-    }
-}
+		var clicked = new Array();  // 눌렀는지 여부
+		var found = new Array();	// 찾았는지 true false
+		var cnt = 10;				// 카드 카운트
+		var turn = 0;				// turn 차례
+		var trIdx = 0;
+		var orderMap = new JqMap();
+		var scoreArr = new Array();	
+		var players = new Array();
+		var orders = new Array();
 
-/* 변수 선언 존 */
-//1. 눌렀는지 여부
-let clicked = new Array();
-//2. 찾았는지 true, false
-let found = new Array();
-//3. 카드 카운트
-let cnt = 10;
-//turn 차례는 필요없어서 선언X
-//추가된 참가자 지우는 것도 필요없어서 선언X
-//4. 위에서 선언한 JqMap
-let orderMap = new JqMap();
-//5. 점수 배열. 참가자들의 인덱스에 따라 점수가 올라감 (나는 배열 할 필요 없는데..)
-let scoreArr = new Array();
-//참가자들을 일괄적으로 저장할 배열 필요없음
-//참가자들의 순서도 필요 없음
+		window.onload = function() {
 
-/* 화면 로드시 처음 실행 */
-window.onload = function() {
-    //시작버튼 클릭시
-    document.getElementById("btn_start").onclick = function() {
-        //재시작 버튼 보이게 css변경
-        $("btn_restart").css("visibility", "visible");
-        start();
-    }
-    //재시작 버튼 클릭 시
-    document.getElementById("btn_restart").onclick = function() {
-        let choice = true;
+			$("#btn_addPlayer").click(function() {
+				addTableRow();
+			});
 
-        //카드를 다 찾은 것이 아닐 때
-        if(cnt > 0) {
-            choice = confirm("아직 게임이 진행중입니다. \n 처음부터 다시 시작하시겠습니까?");
-        }
-        //승자 띄워진 내용 지우기
-        if(choice) {
-            scoreArr = [];
-            for(let i = 0; i < players.length; i++) {
-                scoreArr.push(0);
-            }
-            orderMap.clear();
-            start();
-        }
-    }
-}
-//참가자 이름 비어있는지 체크
-function checkNameNull() {
-    let tbl = $("#tbl_addPlayer tr").length;
-    for(let i=0; i<tbl; i++) {
-        let ibx = $("input[name=name]").eq(i).val();
-        //이름 공백 검사
-        if(ibx == "") {
-            ibx.text("player01");
-            return false;
-        }
-        players.push(ibx);
-        scoreArr.push(0);
-    }
-    return true;
-}
+			document.getElementById("btn_start").onclick = function() {
+				if(checkNameNull()) {
+					$("#btn_restart").css("visibility", "visible");
+					start();
+				}
+			}
 
-/* 게임판 영역 */
-//2차원 배열 생성
-function makeGameBoard(h, w) {
-    let gameBoard = new Array(h);
-    for(let i=0; i<gameBoard.length; i++) {
-        gameBoard[i] = new Array();
-    }
-    return gameBoard;
-}
-//랜덤 값을 발생시켜 게임판 카드에 숫자를 부여
-function makeRandomNum(paramNum) {
-    let arr = new Array();
-    while(true) {
-        let num = Math.floor(Math.random() * paramNum) + 1;
-        let chk = false;
-        for(let i=0; i<arr.length; i++) {
-            if(num == arr[i]) {
-                chk = true;
-                break;
-            }
-        }
-        if(!chk) arr.push(num);
-        if(arr.length == paramNum) break;
-    }
-    return arr;
-}
-//논리적인 카드 보드판에 값을 넣는 메서드
-function insertValue(gameBoard, randomArr) {
-    let num = 0;
-    for(let i=0; i<gameBoard.length; i++) {
-        for(let j=0; j<gameBoard[i]; j++) {
-            gameBoard[i][j] = randomArr[num++];
-        }
-    }
-    return gameBoard;
-}
-//물리적인 카드를 생성하는 메서드
-function makeCard(gameBoard) {
-    let board = document.getElementById("div_gameBoard");
-    board.innerHTML = "";
-    
-    let boardDiv = "";
-    for(let i=0; i<gameBoard.length; i++) {
-        let rowDiv = "<div class=row>\n";
-        rowDiv += "<div class=rowNum><br><br><br>" + parseInt(i+1) + "</div>";
-        for(let j=0; j<gameBoard[i].length; j++){
-            let num = gameBoard[i][j] % 10 == 0 ? 10 : gameBoard[i][j];
-            let cardDiv = "<div name=card class=card id=" + gameBoard[i][j] + " ";
-            cardDiv += "style = background-color:" + clickCard(num) + ">";
-            cardDiv += "<input type=hidden value=" + gameBoard[i][j] + "/>";
-            cardDiv += "</div>\n";
-            rowDiv += cardDiv;
-        }
-        rowDiv += "</div>\n";
-        boardDiv += rowDiv;
-    }
-    board.innerHTML = boardDiv;
-}
+			document.getElementById("btn_restart").onclick = function() {
+				var choice = true;
 
-//카드 클릭시 이미지 로드
-//일단 색깔로 했는데 추후 이미지로 변경
-function clickCard(num) {
-    num %= 10;
-    let color="";
+				if(cnt > 0) {
+					choice = confirm("아직 게임이 진행 중입니다.\n처음부터 다시 시작하시겠습니까?");
+				}
 
-    switch(num) {
-        case 0: color="black"; break;
-        case 1: color="red"; break;
-        case 2: color="blue"; break;
-        case 3: color="brown"; break;
-        case 4: color="green"; break;
-        case 5: color="slateblue"; break;
-        case 6: color="lightpink"; break;
-        case 7: color="lightyellow"; break;
-        case 8: color="oragne"; break;
-        case 9: color="lightred"; break;
-    }
-    return color;
-}
+				if(choice) {
+					$("#winner").text("");
+					orders = [];
+					scoreArr = [];
+					for (var i = 0; i < players.length; i++) {
+						scoreArr.push(0);
+					}
+					orderMap.clear();
+					start();	
+				}
+			}
+		}
 
-// 카운트 다운 프로그래스 바
-function countDown() {
+		// tr 추가
+		function addTableRow() {
+	    	var table = document.getElementById("tbl_addPlayer").childNodes.length -1;
+	        
+	       	var tr = '<tr onmouseover="getRowIdx(this)" > <td>이름</td><td>: <input type=text name=name /><td/>'
+				   		 +'<td><input type=button name="delete" value="제거" onclick="delTableRow(1)" /></td> </tr>';
+			document.getElementById("tbl_addPlayer").innerHTML += tr;
+	    }
+	    
+	    // 마우스의 현재 테이블 idx 확인
+	    function getRowIdx(tr) {
+			trIdx = tr.rowIndex;
+		}
+	    
+	    // 테이블 tr 삭제
+	    function delTableRow(param) {
+			// var table = document.getElementById("tbl_addPlayer");
+			// if(param == 1) {
+			// 	table.removeChild(table.childNodes[trIdx]);
+			// } else {
+			// 	table.removeChild(table.childNodes[table.childNodes.length-1]);
+			// }			
+		}
 
-    //화면의 높이와 너비를 구한다.
-    var maskHeight = $(document).height();  
-    var maskWidth = $(window).width();  
+		// 참가자 이름 비어있는지 체크
+		function checkNameNull() {
+			// var tbl = $("#tbl_addPlayer tr").length;
 
-    //마스크의 높이와 너비를 화면 것으로 만들어 전체 화면을 채운다.
-    $('#mask').css({'width':maskWidth,'height':maskHeight});  
+			// for(var i = 0; i < tbl; i++) {
+			// 	var ibx = $("input[name=name]").eq(i).val();
+				
+			// 	// 이름 공백 검사
+			// 	if(ibx == "") {
+			// 		alert("참가자의 이름을 입력해주세요");
+			// 		players = [];
+			// 		return false;
+			// 	}
 
-    //애니메이션 효과
-    $('#mask').css("display", "block");      
+			// 	// 이름 중복자 검사
+			// 	if(i > 0) {
+			// 		for (var j = 0; j < players.length; j++) {
+			// 			var tmpName = players[j];
 
-    var timeleft = 10;
-    var downloadTimer = setInterval(function(){
-        if(timeleft <= 0){
-        clearInterval(downloadTimer);
-        $(".card").css("background", "white");
-        $("#mask").css("display", "none");
-        }
-        document.getElementById("progressBar").value = 10 - timeleft;
-        timeleft -= 1;
-    }, 1000);
-}
+			// 			if(ibx == tmpName) {
+			// 				alert("참가자의 이름을 각각 다르게 입력해주세요");
+			// 				players = [];
+			// 				return false;
+			// 			} 
+			// 		}
+			// 	}
 
-//게임 시작
-function start() {
-    cnt = 10;
-    turn = 0;
-    // $("#turn").text(orderMap.get(orders[turn]));
-    // $("#arrow" + parseInt(orders[turn]+1)).css("visibility","visible");
-    $("input[name=player]").val(0);
+			// 	players.push(ibx);
+			// 	scoreArr.push(0);
+			// }
 
-    //2차원 배열 생성
-    let board = makeGameBoard(4,5);
+			return true;
+		}
 
-    //난수 발생시켜 넣을 배열값
-    let arrRandom = makeRandomNum(4*5);
+		// 순서 무작위 배치
+		function batchOrderRandom() {
+			// var arrR = new Array();
 
-    //2차원 배열에 값 넣기
-    board = insertValue(board, arrRandom);
+			// while(true) {
+			// 	var random = Math.floor(Math.random() * players.length);
 
-    //카드 생성
-    makeCard(board);
+			// 	if(!orderMap.containsKey(random)) {
+			// 		orderMap.put(random, players[random]);
+			// 		arrR.push(random);
+			// 	}
 
-    //카운트 다운
-    countDown();
+			// 	if(orderMap.size() == players.length) break;
+			// }
 
-    $(".card").mouseover(function(e) {
-        if(e.target.firstChild.value != clicked[0]) e.target.style.background = "skyblue";
-    });
+			// orders = arrR;
+		}
 
-    $(".card").mouseout(function(e) {
-        if(e.clicked.length == 0) e.target.style.background = "";
-        else{
-            if(e.target.firstChild.value != clicked[0]) e.target.style.background = "";
-        }
-    });
+		// 플레이어 세팅
+		function setUpPlayer() {
+			// var id_playBoard = "#div_playerBoard";
 
-    $(".card").click(function() {
-        let number = $(this).children().eq(0).val();
-        let choice;
+			// var tag = "<p>순서는 무작위로 선정됩니다.</p>";
+			// tag += "<span> <span id=turn style=color:blue></span>의 차례입니다.</span><br/><br/>";
+			// tag += "<table>";
 
-        if(number != "") {
-            if(clicked.length == 0) {
-                clicked.push(number);
-                e.target.style.backgroundColor = clickCard(number);
-            }else {
-                let chk = false;
-                for(let i=0; i<clicked.length; i++) {
-                    if(parseInt(clicked[i]) == parseInt(number)) {
-                        chk = true;
-                        break;
-                    }
-                }
-                if(!chk) {
-                    e.target.style.backgroundColor = clickCard(number);
-                    clicked.push(number);
-                    setInterval(function() {
-                        if(clicked.length == 2) {
-                            if(parseInt(clicked[0]) % 10 == parseInt(clicked[1]) % 10){
-                                // let score = $("#p" + parseInt(orders[turn]+1)).val();
-                                // $("#p" + parseInt(orders[turn]+1)).val(++score);
-                                // scoreArr[orders[turn]]++;
-                                // cnt--;
+			// for (var i = 0; i < orderMap.size(); i++) {
+			// 	tag += "<tr>";
+			// 	tag += "<td> <span id=arrow" + parseInt(i+1) + " style='visibility:hidden; color:red;' >▶</span></td>";
+			// 	tag += "<td>" + orderMap.get(i) + "</td>";
+			// 	tag += "<td>:" + " <input type=text id=p" + parseInt(i+1) + " name=player readonly=true value=0 size=2 style=text-align:right />" + "</td>";
+			// 	tag += "</tr>";
+			// }
 
-                                $("#" + clicked[0]).addClass("found");
-                                $("#" + clicked[1]).addClass("found");
+			// $(id_playBoard).html(tag);
+		}
 
-                                document.getElementById(clicked[0]).firstChild.value = "";
-                                document.getElementById(clicked[1]).firstChild.value = "";
+		// 시작
+		function start() {
 
-                                $(".found").removeClass("card");
-                                $(".found").css("background", "");
-                                $(".found").css("border", "");
-                            }else {
-                                $("#" + clicked[0]).css("background", "");
-                                $("#" + clicked[1]).css("background", "");
-                            }
-                            while(clicked.length > 0) clicked.pop();
-                            $(".card").css("background", "");
-                        }
-                        if(cnt == 0) {
+			batchOrderRandom();	// 순서 무작위 섞기
+			$("#div_addPlayer").css("display", "none");
+
+			setUpPlayer();
+			$("#div_playerBoard").css("visibility", "visible");
+
+			cnt = 10;
+			turn = 0;
+			$("#turn").text(orderMap.get(orders[turn]));
+			$("#arrow" + parseInt(orders[turn]+1)).css("visibility", "visible");
+			$("input[name=player]").val(0);
+
+			// 2차원 배열 생성
+			var board = makeGameBoard(4,5);
+
+			// 난수 발생시켜 넣을 배열값
+			var arrRandom = makeRandomNum(4*5);
+
+			// 2차원 배열에 값 넣기 
+			board = insertValue(board, arrRandom);
+
+			// 카드 생성 
+			makeCard(board);
+
+			// 카운트 다운
+			countDown();
+			
+			$(".card").mouseover(function(e) {
+				if(e.target.firstChild.value != clicked[0]) e.target.style.backgroundColor = "skyblue";
+			});
+
+			$(".card").mouseout(function(e) {
+				if(clicked.length == 0) e.target.style.backgroundColor = "";	
+				else {
+					if(e.target.firstChild.value != clicked[0]) e.target.style.backgroundColor = "";
+				}
+			});	
+
+			$(".card").click(function(e) {	
+				var number = $(this).children().eq(0).val();
+				var choice;
+
+				if(number != "") {
+					if(clicked.length == 0) {
+						clicked.push(number);
+						e.target.style.backgroundImage = clickCard(number);
+					} else {
+
+						var chk = false;
+
+						for (var i = 0; i < clicked.length; i++) {
+							if(parseInt(clicked[i]) == parseInt(number)) {
+								chk = true;
+								break;
+							}
+						}
+
+						if(!chk) {	
+
+							e.target.style.backgroundImage = clickCard(number);
+							clicked.push(number);
+
+							setInterval(function(){
+								if(clicked.length == 2) {
+									if(parseInt(clicked[0]) % 10 == parseInt(clicked[1]) % 10) {
+										var score = $("#p" + parseInt(orders[turn]+1)).val();
+										$("#p" + parseInt(orders[turn]+1)).val(++score);
+										scoreArr[orders[turn]]++;
+										cnt--;
+
+
+										$("#" + clicked[0]).addClass("found");
+										$("#" + clicked[1]).addClass("found");
+
+										document.getElementById(clicked[0]).firstChild.value = "";
+										document.getElementById(clicked[1]).firstChild.value = "";
+
+										$(".found").removeClass("card");
+										$(".found").css("background", "");
+										$(".found").css("border", "");
+									} else {
+										// alert("두 카드가 다릅니다");
+
+                                        setTimeout(() => {
+                                            $("#" + clicked[0]).css("background", "");
+                                            $("#" + clicked[1]).css("background", "");
+                                        }, 1000);
+										// $("#" + clicked[0]).delay(1000).css("background", "");
+										// $("#" + clicked[1]).delay(1000).css("background", "");
+
+										// 턴 교체
+										// $("#arrow" + parseInt(orders[turn]+1)).css("visibility", "hidden");
+										// turn++;
+										// if(turn == players.length) turn = 0;
+										// $("#turn").text(orderMap.get(orders[turn]));
+										// $("#arrow" + parseInt(orders[turn]+1)).css("visibility", "visible");
+									}	
+
+									while(clicked.length > 0) clicked.pop();
+									$(".card").css("background", "");
+								}
+
+								if(cnt == 0) {
 									
 
-                            var max = 0;
-                            var maxArr = new Array();
+									var max = 0;
+									var maxArr = new Array();
 
-                            for (var i = 0; i < scoreArr.length; i++) {
-                                max = Math.max(scoreArr[i], max);
-                            }
+									for (var i = 0; i < scoreArr.length; i++) {
+										max = Math.max(scoreArr[i], max);
+									}
 
-                            for (var i = 0; i < scoreArr.length; i++) {
-                                if(scoreArr[i] == max) {
-                                    maxArr.push(i);
-                                }
-                            }
+									for (var i = 0; i < scoreArr.length; i++) {
+										if(scoreArr[i] == max) {
+											maxArr.push(i);
+										}
+									}
 
-                            if(maxArr.length == 1) {
-                                $("#winner").text(orderMap.get(maxArr[0]) +" 가(이) 이겼습니다");
-                            } else {
-                                var msg = "";
-                                for (var i = 0; i < maxArr.length; i++) {
-                                    msg += orderMap.get(maxArr[i]);
-                                    if(i < maxArr.length-1) msg += " 과(와) ";
-                                    else msg += " 가(이) 동점으로 무승부입니다.";
-                                }
+									// if(maxArr.length == 1) {
+									// 	$("#winner").text(orderMap.get(maxArr[0]) +" 가(이) 이겼습니다");
+									// } else {
+									// 	var msg = "";
+									// 	for (var i = 0; i < maxArr.length; i++) {
+									// 		msg += orderMap.get(maxArr[i]);
+									// 		if(i < maxArr.length-1) msg += " 과(와) ";
+									// 		else msg += " 가(이) 동점으로 무승부입니다.";
+									// 	}
 
-                                $("#winner").text(msg);
-                            }
-                        }
-                    }, 600);
-                }
-            }
-        }
-    });
-}
+									// 	$("#winner").text(msg);
+									// }
+								}
+							},650);
+						}
+					}
+				}
+			});
+		}
+
+		// 2차원 배열 생성
+		function makeGameBoard(h, w) {
+			var gameBoard = new Array(h);
+
+			for (var i = 0; i < gameBoard.length; i++) {
+				gameBoard[i] = new Array(w);
+			}
+
+			return gameBoard;
+		}
+
+		// 난수 발생시켜 넣을 배열값
+		function makeRandomNum(paramNum) {
+			var arr = new Array();
+			while(true) {
+				var num = Math.floor(Math.random() * paramNum) + 1;
+
+				var chk = false;
+				for (var i = 0; i < arr.length; i++) { 
+					if(num == arr[i]) {
+						chk = true;
+						break;
+					}
+				}
+
+				if(!chk) arr.push(num);
+
+				if(arr.length == paramNum) break;
+			}
+
+			return arr;
+		}
+
+		// 보드판 값 넣기
+		function insertValue(gameBoard, randomArr) {
+			var num = 0;
+			for (var i = 0; i < gameBoard.length; i++) {
+				for (var j = 0; j < gameBoard[i].length; j++) {
+					gameBoard[i][j] = randomArr[num++];
+				}
+			}
+
+			return gameBoard;
+		}
+
+		// 카드 생성
+		function makeCard(gameBoard) {
+			var board = document.getElementById("div_gameBoard");
+			board.innerHTML = "";
+
+			var boardDiv = "";
+			for (var i = 0; i < gameBoard.length; i++) {
+				var rowDiv = "<div class=row>\n";
+				rowDiv += "<div class=rowNum><br/><br/><br/>" + parseInt(i+1) + "</div>";
+				for (var j = 0; j < gameBoard[i].length; j++) {
+					var num = gameBoard[i][j] % 10 == 0 ? 10 : gameBoard[i][j];
+					var cardDiv = "<div name=card class=card id=" + gameBoard[i][j] + " ";
+					cardDiv += 'style="background-image:' + clickCard(num) + '; background-repeat: no-repeat; background-size: cover;" >';
+					cardDiv += "<input type=hidden value=" + gameBoard[i][j] + " />";
+					//cardDiv += gameBoard[i][j];
+					cardDiv += "</div>\n";
+					rowDiv += cardDiv;
+				}
+
+				rowDiv += "</div>\n";
+				boardDiv += rowDiv;
+			}
+
+			board.innerHTML = boardDiv;
+		}
+
+		// 카드 클릭 시 이미지 로드
+		function clickCard(num) {
+			num %= 10;
+			var image="";
+
+			switch(num) {
+				case 0 : image = "url(images/cards/card0.png)"; break;
+				case 1 : image = "url(images/cards/card1.png)"; break;
+				case 2 : image = "url(images/cards/card2.png)"; break;
+				case 3 : image = "url(images/cards/card3.png)"; break;
+				case 4 : image = "url(images/cards/card4.png)"; break;
+				case 5 : image = "url(images/cards/card5.png)"; break;
+				case 6 : image = "url(images/cards/card6.png)"; break;
+				case 7 : image = "url(images/cards/card7.png)"; break;
+				case 8 : image = "url(images/cards/card8.png)"; break;
+				case 9 : image = "url(images/cards/card9.png)"; break;
+
+			}
+
+			return image;
+		}
+
+		// 카운트 다운 프로그래스 바
+		function countDown() {
+
+			//화면의 높이와 너비를 구한다.
+        	var maskHeight = $(document).height();  
+        	var maskWidth = $(window).width();  
+		
+        	//마스크의 높이와 너비를 화면 것으로 만들어 전체 화면을 채운다.
+        	$('#mask').css({'width':maskWidth,'height':maskHeight});  
+		
+        	//애니메이션 효과
+        	$('#mask').css("display", "block");      
+
+			var timeleft = 1;
+			var downloadTimer = setInterval(function(){
+			  if(timeleft <= 0){
+			    clearInterval(downloadTimer);
+			    $(".card").css("background", "white");
+			    $("#mask").css("display", "none");
+			  }
+			//   document.getElementById("progressBar").value = 10 - timeleft;
+			  timeleft -= 1;
+			}, 1000);
+		}

@@ -93,37 +93,57 @@
                 <!-- 프로젝트 이름 영역 -->
                 <div class="our_name">우나프로젝트</div>
                 <!-- 게임영역 -->
-                <div id="game_area">
-                    <div id="div_gameBoard" class="gameBoard">
-                        <p>게임판</p>
+                <div class="content">
+                    <div class="side left">
+                        <div class="header">
+                            <!-- <table id="tbl_boardHeader">
+                                <tr>
+                                    <td>A</td>
+                                    <td>B</td>
+                                    <td>C</td>
+                                    <td>D</td>
+                                    <td>E</td>
+                                </tr>
+                            </table> -->
+                        </div>
+                        <div id="div_gameBoard" class="gameBoard">
+                            <p>게임판</p>
+                        </div>
                     </div>
-                    <!-- 사이드 영역 -->
+                    &nbsp;&nbsp;
                     <div class="side right">
                         <div class="btnArea">
                             <input type="button" id="btn_start" name="btn_start" value="시작" /> &nbsp;&nbsp;
-				            <input type="button" id="btn_restart" name="btn_restart" value="재시작" style="visibility: hidden;">
+                            <input type="button" id="btn_restart" name="btn_restart" value="재시작" style="visibility: hidden;">
+                        </div>	
+                        <br/>
+                        <div id="div_addPlayer" style="border: 1px solid black; padding: 3px;">
+                            <table id="tbl_addPlayer">
+                                <tr>
+                                    <td>참가자</td>
+                                    <td>: ${id}</td>
+                                </tr>
+                                <tr>
+                                    <td>횟수</td>
+                                    <td class="click_count">: n번</td>
+                                </tr>
+                                <tr>
+                                    <td>시간</td>
+                                    <td>: 00:00:00</td>
+                                </tr>
+                            </table>
+            
+                            <br/>
                         </div>
-                    </div>
-                    <!-- 일단 이름 똑같이 줌. 추후 수정! -->
-                    <div id="div_addPlayer">
-                        <table id="tbl_addPlayer">
-                            <tr>
-                                <td>이름</td>
-                                <td>: <input type="text" name="name"></td>
-                            </tr>
-                        </table>
-                        <table id="tbl_score"
-                            <tr>
-                                <td>횟수</td>
-                                <td>n 번</td>
-                            </tr>
-                            <tr>
-                                <td>시간</td>
-                                <td>00:00:00</td>
-                            </tr>
-                        </table>
+                        <div id="div_playerBoard" style="visibility: hidden; border: 1px solid black;">
+                        </div>
+                        <br/><br/>
+                        <!-- <progress value="0" max="10" id="progressBar" ></progress> -->
+                        <br/><br/>
+                        <span id="winner" style="font-size: 15px;"></span>
                     </div>
                 </div>
+                <div id="mask"></div>
                 <!-- 하단 육각형 게임 로고 영역 -->
                 <div id="polygon_area" onclick="location.href='ucard-index.html'">
                     <!-- 왼쪽 poly는 테두리가 필요해서 내부 poly 존재-->
