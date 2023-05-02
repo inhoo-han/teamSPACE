@@ -24,22 +24,79 @@ body {
 #container{
     position: relative;
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
+    padding-top: 100px;
     background-color: transparent;
     /* margin-bottom: 0px; */
-    border: 3px solid red;
+    /* border: 3px solid red; */
+}
+#book_area{
+    position: relative;
+    display: flex;
+    margin: 0 auto;
+    width: 65%;
+    /* border: 3px solid yellow; */
+}
+#explain_area{
+    position: relative;
+    height: 100%;
+    width: 30%;
+    margin-top: 30%;
+    text-align: center;
+}
+#explain_area p span{
+    position: relative;
+    font-family: 'sqneoEB';
+}
+#explain_area .ep_title{
+    font-size: 45px;
+    color: #555;
+    line-height: 100px;
+}
+#explain_area .ep_content{
+    font-size: 15px;
+    font-style: italic;
+    color: #999;
+}
+#book_shelf{
+    position: relative;
+    padding: 0 60px;
+    height: 100%;
+    width: 70%;
+    /* border: 3px solid blue; */
+}
+.img_shelf{
+    position: absolute;
+    width: 80%;
+    top: 250px;
+    z-index: 1;
+}
+.img_shelf2{
+    left: 60px;
+    top: 610px;
 }
 .book{
-    position: absolute;
+    position: relative;
+    display: inline-block;
     margin: 100px auto;
-    width: 922px;
-    height: 600px;
-    border: 3px solid salmon;
+    width: 240px;
+    height: 160px;
+    /* border: 3px solid salmon; */
+    z-index: 10;
+}
+.book:hover{
+    transition: transform 1s;
+    transform: scale(1.05);
 }
 .page{
-    width: 461px;
-    height: 600px;
+    position: relative;
+    margin: 0 auto;
+    /* width: 461px;
+    height: 600px; */
+    width: 120px;
+    height: 160px;
     border: 3px solid navy;
+    background-size: cover;
 }
 .book1 .page1{background-image: url(../pages/1.jpg);}
 .book1 .page2{background-image: url(../pages/2.jpg);}
@@ -50,9 +107,12 @@ body {
 .book1 .page7{background-image: url(../pages/7.jpg);}
 .book1 .page8{background-image: url(../pages/8.jpg);}
 .book1 .page9{background-image: url(../pages/9.jpg);}
-.book1 .page1~.page{
+.page1~.page{
     display: none;
 }
+
+.book2 .page1{background-image: url(../pages/1.jpg);}
+.book3 .page1{background-image: url(../pages/1.jpg);}
 #book {
     margin: 100px auto;
     width: 922px;

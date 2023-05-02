@@ -89,44 +89,49 @@
         <!---------- [E] h2 title and BG img div ---------->
         <!---------- [S] #container ---------->
         <div id="container">
+            <!-- width 65%영역 -->
             <div id="book_area">
                 <section id="explain_area">
-                    <p>우나 탐험마당<br>
-                    오른쪽의 책을 열어 우주를 탐험해봅시다.</p>
+                    <p><span class="ep_title">우나 탐험마당</span><br>
+                    <span class="ep_content">오른쪽의 책을 열어<br>우주를 탐험해봅시다.</span></p>
                 </section>
-            </div>
-            <div class="book book1">
-                <div class="page page1"></div>
-                <div class="page page2"></div>
-                <div class="page page3"></div>
-                <div class="page page4"></div>
-                <div class="page page5"></div>
-                <div class="page page6"></div>
-                <div class="page page7"></div>
-                <div class="page page8"></div>
-                <div class="page page9"></div>
-            </div>
-            <div class="book book2">
-                <div class="page page1"></div>
-                <div class="page page2"></div>
-                <div class="page page3"></div>
-                <div class="page page4"></div>
-                <div class="page page5"></div>
-                <div class="page page6"></div>
-                <div class="page page7"></div>
-                <div class="page page8"></div>
-                <div class="page page9"></div>
-            </div>
-            <div class="book book3">
-                <div class="page page1"></div>
-                <div class="page page2"></div>
-                <div class="page page3"></div>
-                <div class="page page4"></div>
-                <div class="page page5"></div>
-                <div class="page page6"></div>
-                <div class="page page7"></div>
-                <div class="page page8"></div>
-                <div class="page page9"></div>
+                <div id="book_shelf">
+                    <img class="img_shelf img_shelf1" src="images/wall-bookshelf.png" alt="책장">
+                    <div class="book book1">
+                        <div class="page page1"></div>
+                        <div class="page page2"></div>
+                        <div class="page page3"></div>
+                        <div class="page page4"></div>
+                        <div class="page page5"></div>
+                        <div class="page page6"></div>
+                        <div class="page page7"></div>
+                        <div class="page page8"></div>
+                        <div class="page page9"></div>
+                    </div>
+                    <div class="book book2">
+                        <div class="page page1"></div>
+                        <div class="page page2"></div>
+                        <div class="page page3"></div>
+                        <div class="page page4"></div>
+                        <div class="page page5"></div>
+                        <div class="page page6"></div>
+                        <div class="page page7"></div>
+                        <div class="page page8"></div>
+                        <div class="page page9"></div>
+                    </div>
+                    <img class="img_shelf img_shelf2" src="images/wall-bookshelf.png" alt="책장">
+                    <div class="book book3">
+                        <div class="page page1"></div>
+                        <div class="page page2"></div>
+                        <div class="page page3"></div>
+                        <div class="page page4"></div>
+                        <div class="page page5"></div>
+                        <div class="page page6"></div>
+                        <div class="page page7"></div>
+                        <div class="page page8"></div>
+                        <div class="page page9"></div>
+                    </div>
+                </div>
             </div>
         </div>
         <!---------- [E] container ---------->
@@ -149,7 +154,7 @@
     <!-------------------- [E] #wrap -------------------->
 
     <script>
-        $('#book').turn({
+        $('#clickBook').turn({
             gradients: true,
             acceleration: true,
             elevation: 50
