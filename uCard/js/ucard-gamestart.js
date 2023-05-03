@@ -228,10 +228,12 @@ function start() {
     // 카운트 다운
     countDown();
     
+    //카드 mouseover시 배경 skyblue
     $(".card").mouseover(function(e) {
         if(e.target.firstChild.value != clicked[0]) e.target.style.backgroundColor = "skyblue";
     });
 
+    //카드에서 mouseout했을 때 배경색 없어짐
     $(".card").mouseout(function(e) {
         if(clicked.length == 0) e.target.style.backgroundColor = "";	
         else {
@@ -239,7 +241,7 @@ function start() {
         }
     });	
 
-
+    //카드 클릭
     $(".card").click(function(e) {	
         var number = $(this).children().eq(0).val();
         var choice;
@@ -255,6 +257,7 @@ function start() {
                         chk = true;
                         break;
                     }
+                //카드 두 개 선택하면 count 올라감
                 setCount++;
                 document.getElementById("click_count").innerHTML=setCount;
                 }
@@ -286,12 +289,12 @@ function start() {
                                 });
 
                             } else {
-                                // alert("두 카드가 다릅니다");
+                                alert("두 카드가 다릅니다");
 
-                                setTimeout(() => {
+                                // setTimeout(() => {
                                     $("#" + clicked[0]).css("background", "");
                                     $("#" + clicked[1]).css("background", "");
-                                }, 500);
+                                // }, 500);
 
                                 // 턴 교체
                                 // $("#arrow" + parseInt(orders[turn]+1)).css("visibility", "hidden");
