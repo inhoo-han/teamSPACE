@@ -239,6 +239,7 @@ function start() {
         }
     });	
 
+
     $(".card").click(function(e) {	
         var number = $(this).children().eq(0).val();
         var choice;
@@ -280,12 +281,17 @@ function start() {
                                 $(".found").removeClass("card");
                                 $(".found").css("background", "");
                                 $(".found").css("border", "");
+                                $(".found").hover(function() {
+                                    $(this).css("backgroundColor", "");
+                                });
+
                             } else {
                                 // alert("두 카드가 다릅니다");
 
-                                
-                                $("#" + clicked[0]).css("background", "");
-                                $("#" + clicked[1]).css("background", "");
+                                setTimeout(() => {
+                                    $("#" + clicked[0]).css("background", "");
+                                    $("#" + clicked[1]).css("background", "");
+                                }, 500);
 
                                 // 턴 교체
                                 // $("#arrow" + parseInt(orders[turn]+1)).css("visibility", "hidden");
