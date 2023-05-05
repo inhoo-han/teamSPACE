@@ -6,8 +6,8 @@
     position: fixed;
     top: 450px;
     width: 190px;
-    height: 200px;
-    min-height: 200px;
+    height: 150px;
+    min-height: 150px;
     z-index: 1000;
     text-align: center;
     box-sizing: border-box;
@@ -28,7 +28,7 @@
 }
 .bookmark_li{
     position: relative;
-    height: 25%;
+    height: 33.33%;
     width: 100%;
     background-color: #f0f0f0;
     font-size: 18px;
@@ -42,11 +42,11 @@
     font-size: 23px;
     line-height: 50px;
 }
-.bookmark_li:last-child{
+.bookmark_li:nth-child(2){
     background-color: #555;
     border-bottom: none;
 }
-.bookmark_li:last-child>a{
+.bookmark_li:nth-child(2)>a{
     color: #fff;
 }
 .bookmark_li>a{
@@ -305,7 +305,7 @@ footer{
     width: 100%;
     min-width: 1100px;
     height: 150px;
-    margin-top: 150px;
+    /* margin-top: 150px; 여기 지웠음*/
     /* background: rgba(0, 0, 0, 1); */
 }
 footer::after{

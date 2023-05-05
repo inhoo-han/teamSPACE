@@ -29,61 +29,91 @@ body {
     padding-top: 100px;
     background-color: transparent;
     /* margin-bottom: 0px; */
-    border: 3px solid red;
+    /* border: 3px solid red; */
 }
 #book_area{
     position: relative;
     display: flex;
     margin: 0 auto;
     width: 65%;
-    border: 3px solid yellow;
+    min-width: 715px;
+    height: 700px;
+    /* border: 3px solid yellow; */
 }
 #explain_area{
     position: relative;
-    height: 100%;
-    width: 30%;
-    margin-top: 30%;
+    height: 700px;
+    min-width: 400px;
+    padding-top: 250px;
+    /* border: 3px solid navy; */
     text-align: center;
 }
-#explain_area p span{
+#explain_area .ep_title_p{
     position: relative;
-    font-family: 'sqneoEB';
-} 
-#explain_area .ep_title{
-    font-size: 45px;
-    color: #555;
-    line-height: 100px;
+    display: inline-block;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
 }
-#explain_area .ep_content{
-    font-size: 15px;
+#explain_area .ep_title_span{
+    font-size: 70px;
+    color: #555;
+    /* line-height: 50px; */
+    font-family: 'sqneoHV';
+}
+#explain_area .ep_content_p{
+    margin-top: 50px;
+}
+#explain_area .ep_content_span{
+    font-family: 'sqneoEB';
+    font-size: 20px;
     font-style: italic;
+    line-height: 25px;
     color: #999;
+    text-align: center;
 }
 #book_shelf{
     position: relative;
     padding: 0 60px;
     height: 100%;
     width: 70%;
+    min-width: 700px;
     /* border: 3px solid blue; */
 }
 .img_shelf{
     position: absolute;
-    width: 80%;
+    width: 600px;
     top: 250px;
+    left: 50%;
+    margin-left: -300px;
     z-index: 1;
 }
 .img_shelf2{
-    left: 60px;
+    left: 50%;
+    margin-left: -300px;
     top: 610px;
 }
 .book{
-    position: relative;
+    position: absolute;
     display: inline-block;
-    margin: 100px auto;
-    width: 240px;
-    height: 160px;
+    width: 150px;
+    height: 200px;
+    top: 65px;
+    left: 50%;
+    margin-left: -200px;
     /* border: 3px solid salmon; */
     z-index: 10;
+    box-shadow: 2px -2px 5px #333;
+}
+.book2{
+    margin-left: 50px;
+}
+.book3{
+    top: 430px;
+}
+.book4{
+    top: 430px;
+    margin-left: 50px;
 }
 .book:hover{
     transition: transform 1s;
@@ -94,8 +124,8 @@ body {
     margin: 0 auto;
     /* width: 461px;
     height: 600px; */
-    width: 120px;
-    height: 160px;
+    width: 150px;
+    height: 200px;
     border: 3px solid navy;
     background-size: cover;
 }
