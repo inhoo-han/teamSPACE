@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="${contextPath}/bookInfo/css/jquery-ui.min.css">
     <link rel="stylesheet" href="${contextPath}/bookInfo/css/reset.css">
     <link rel="stylesheet" href="${contextPath}/bookInfo/css/header&footer.css">
-    <link rel="stylesheet" href="${contextPath}/bookInfo/css/ep-solarsystem.css">
+    <link rel="stylesheet" href="${contextPath}/bookInfo/css/ep-pages.css">
     <link rel="shortcut icon" type="image/icon" sizes="32*32" href="${contextPath}/bookInfo/images/header/logoSample2.png">
     <script src="${contextPath}/bookInfo/js/jquery-3.6.3.min.js"></script>
     <script src="${contextPath}/bookInfo/js/jquery-ui.min.js"></script>

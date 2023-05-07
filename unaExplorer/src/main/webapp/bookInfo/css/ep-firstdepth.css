@@ -27,7 +27,8 @@ body {
     min-width: 1100px;
     height: 900px;
     padding-top: 100px;
-    background-color: #111;
+    /*background-color: transparent;*/
+    background-image: url(../images/nightSky.jpg);
     /* margin-bottom: 0px; */
     /* border: 3px solid red; */
 }
@@ -56,13 +57,17 @@ body {
     text-align: center;
 }
 #explain_area .ep_title_span{
-    font-size: 70px;
-    color: #555;
+    font-size: 50px;
+    color: #999;
     /* line-height: 50px; */
     font-family: 'sqneoHV';
 }
+#explain_area .ep_title_span_point{
+	font-size: 70px;
+	color: #ccc;
+}
 #explain_area .ep_content_p{
-    margin-top: 50px;
+    margin-top: 30px;
 }
 #explain_area .ep_content_span{
     font-family: 'sqneoEB';
@@ -126,13 +131,22 @@ body {
     height: 600px; */
     width: 150px;
     height: 200px;
-    border: 3px solid navy;
     background-size: cover;
 }
-.book1 .page1{background-image: url(../pages/1.jpg);}
-.book2 .page1{background-image: url(../pages/1.jpg);}
-.book3 .page1{background-image: url(../pages/1.jpg);}
-.book4 .page1{background-image: url(../pages/1.jpg);}
-footer{
-	background-color: #111;
+.book1 .page1{background-image: url(../images/book/bookCover/1.png);}
+.book2 .page1{background-image: url(../images/book/bookCover/2.png);}
+.book3 .page1{background-image: url(../images/book/bookCover/3.png);}
+.book4 .page1{background-image: url(../images/book/bookCover/4.png);}
+
+#title_bg_wrap::after{
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 300px;
+    content: "";
+    background: linear-gradient(to top, rgb(0,0,0) 0%, transparent 30%);
+    z-index: 10;
+}
+#sub_page_h2{
+	z-index: 100;
 }
