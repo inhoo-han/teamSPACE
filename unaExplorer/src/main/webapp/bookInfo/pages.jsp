@@ -105,6 +105,9 @@
 						<c:if test="${!empty page.imageFileName}">	
 							<img class="page_img" src="${contextPath}/download.do?imageFileName=${page.imageFileName}&pageNum=${page.pageNum}&bookNum=${page.bookNum}">
 						</c:if>
+						<c:if test="${empty page.imageFileName}">	
+							<img class="page_img" src="${contextPath}/bookInfo/images/astronaut.png">
+						</c:if>
 						<p class="page_title">${page.title}</p>
 						<p class="page_content">${page.content}</p>
 						</div>

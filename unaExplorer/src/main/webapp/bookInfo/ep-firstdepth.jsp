@@ -99,8 +99,8 @@
             <div id="book_area">
                 <section id="explain_area">
                     <p class="ep_title_p">
-                        <span class="ep_title_span ep_title_span1">우나</span><br>
-                        <span class="ep_title_span ep_title_span2">탐험마당</span><br>
+                        <span class="ep_title_span ep_title_span1">우나<span class="ep_title_span ep_title_span_point">탐험마당</span>에</span><br>
+                        <span class="ep_title_span ep_title_span2">오신 것을 환영합니다</span><br>
                     </p>
                     <p class="ep_content_p">
                         <span class="ep_content_span">오른쪽의 책을 열어<br>우주를 탐험해봅시다.</span>
