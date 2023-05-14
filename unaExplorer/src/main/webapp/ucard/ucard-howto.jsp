@@ -13,14 +13,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>우나카드뒤집기</title>
-    <link rel="stylesheet" href="${contextPath}/ucard/css/jquery-ui.min.css">
-    <link rel="stylesheet" href="${contextPath}/ucard/css/reset.css">
-    <link rel="stylesheet" href="${contextPath}/ucard/css/header&footer.css">
-    <link rel="stylesheet" href="${contextPath}/ucard/css/ucard-inner.css">
-    <link rel="shortcut icon" type="image/icon" href="${contextPath}/ucard/images/header/logoSample2.png">
-    <script src="${contextPath}/ucard/js/jquery-3.6.3.min.js"></script>
-    <script src="${contextPath}/ucard/js/jquery-ui.min.js"></script>
-    <script src="${contextPath}/ucard/js/header&footer.js"></script>
+    <link rel="stylesheet" href="${contextPath}/resources/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/reset.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/header&footer.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/bookmark_playground.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/ucard-howto.css">
+    <link rel="shortcut icon" type="image/icon" href="${contextPath}/resources/images/header/logoSample2.png">
+    <script src="${contextPath}/resources/js/jquery-3.6.3.min.js"></script>
+    <script src="${contextPath}/resources/js/jquery-ui.min.js"></script>
+    <script src="${contextPath}/resources/js/header&footer.js"></script>
+    <script src="${contextPath}/resources/js/ucard-howto.js"></script>
 </head>
 <body>
     <!-------------------- [S] #wrap -------------------->
@@ -39,7 +41,7 @@
             <h1 class="home" onclick="location.href='../index/index.html'">
                 <span>우나</span>
                 <div class="logo">
-                    <img src="${contextPath}/ucard/images/header/logoSample2.png" alt="logo" class="main_logo_img">
+                    <img src="${contextPath}/resources/images/header/logoSample2.png" alt="logo" class="main_logo_img">
                 </div>
             </h1>
             <nav>
@@ -71,7 +73,7 @@
             </nav>
             <div id="login_area">
                 <ul>
-                    <li class="srch_btn"><a href="#"><img class="srch_img" src="${contextPath}/ucard/images/search.png" alt="search"></a></li>
+                    <li class="srch_btn"><a href="#"><img class="srch_img" src="${contextPath}/resources/images/search.png" alt="search"></a></li>
                     <li><a href="#">로그인</a></li>
                     <li><a href="#">회원가입</a></li>
                 </ul>
@@ -82,7 +84,7 @@
                         <legend>검색영역</legend>
                         <label for="srch" class="hidden">검색</label>
                         <input type="search" id="srch" placeholder="검색어를 입력하세요">
-                        <button type="submit" class="srch_btn"><img src="${contextPath}/ucard/images/search.png" alt="search"></button>
+                        <button type="submit" class="srch_btn"><img src="${contextPath}/resources/images/search.png" alt="search"></button>
                     </fieldset>
                 </form>
             </div>
@@ -108,15 +110,26 @@
             <div id="ucard_area">
                 <!-- 프로젝트 이름 영역 -->
                 <div class="our_name">우나프로젝트</div>
-                <!-- 게임방법, 게임시작, 랭킹 버튼 영역 -->
-                <div id="polygon_game_btn_area">
-                    <div class="polygon_game_btn howto">
-                        <div class="poly_game_btn_inner" onclick="location.href='${contextPath}/ucard/ucard-howto.jsp'">
-                            <p>게임<br>방법</p>
-                        </div>
-                    </div>
+                <!-- howto 영역 -->
+                <div id="ucard_howto_area">
+                	<!-- 눈에 보이는 영역 -->
+                	<div class="animation_canvas">
+                		<!-- 실제 슬라이드 길이(이미지가 담기는 곳) -->
+                		<div class="slider_panel">
+                			<!-- 각각의 이미지 -->
+                			<img class="slider_image" src="${contextPath}/resources/images/ucard_howto/ucard_howto_1+.png" alt="첫 번째 설명 이미지">
+                			<img class="slider_image" src="${contextPath}/resources/images/ucard_howto/ucard_howto_2+.png" alt="두 번째 설명 이미지">
+                			<img class="slider_image" src="${contextPath}/resources/images/ucard_howto/ucard_howto_3+.png" alt="세 번째 설명 이미지">
+                			<img class="slider_image" src="${contextPath}/resources/images/ucard_howto/ucard_howto_4+.png" alt="네 번째 설명 이미지">
+                			<img class="slider_image" src="${contextPath}/resources/images/ucard_howto/ucard_howto_5+.png" alt="다섯 번째 설명 이미지">
+                		</div>
+                	</div>
+ 			        <!-- 좌우 컨트롤 패널 영역 -->
+					<div class="next"></div>
+					<div class="prev"></div>
+                </div>
                 <!-- 하단 육각형 게임 로고 영역 -->
-                <div id="polygon_area" onclick="location.href='${contextPath}/ucard/ucard-index.html'">
+                <div id="polygon_area" onclick="location.href='${contextPath}/ucardmap/ucardIndex.una'">
                     <!-- 왼쪽 poly는 테두리가 필요해서 내부 poly 존재-->
                     <div class="polygon poly_left">
                         <div class="poly_left_inner">

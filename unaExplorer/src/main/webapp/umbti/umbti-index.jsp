@@ -13,14 +13,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>우나엠비티아이</title>
-    <link rel="stylesheet" href="${contextPath}/umbti/css/reset.css">
-    <link rel="stylesheet" href="${contextPath}/umbti/css/umbti-index.css">
-    <link rel="stylesheet" href="${contextPath}/umbti/css/header&footer.css">
-    <script src="${contextPath}/umbti/js/jquery-3.6.3.min.js"></script>
-    <script src="${contextPath}/umbti/js/jquery-ui.min.js"></script>
-    <script src="${contextPath}/umbti/js/dep_menu.js"></script>
-    <script src="${contextPath}/umbti/js/umbti.js"></script>
-    <script src="${contextPath}/umbti/js/header&footer.js"></script>
+    <link rel="stylesheet" href="${contextPath}/resources/css/reset.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/header&footer.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/bookmark_playground.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/umbti-index.css">
+     <link rel="shortcut icon" type="image/icon" href="${contextPath}/resources/images/header/logoSample2.png">
+    <script src="${contextPath}/resources/js/jquery-3.6.3.min.js"></script>
+    <script src="${contextPath}/resources/js/jquery-ui.min.js"></script>
+    <script src="${contextPath}/resources/js/dep_menu.js"></script>
+    <script src="${contextPath}/resources/js/header&footer.js"></script>
+    <script src="${contextPath}/resources/js/umbti.js"></script>
 </head>
 <body>
     <!-------------------- [S] #wrap -------------------->
@@ -36,10 +38,10 @@
         </div>
         <!---------- [S] header ---------->
         <header>
-            <h1 class="home" onclick="location.href='../index/index.html'">
+            <h1 class="home" onclick="location.href='${contextPath}/index.una'">
                 <span>우나</span>
                 <div class="logo">
-                    <img src="${contextPath}/umbti/images/header/logoSample2.png" alt="logo" class="main_logo_img">
+                    <img src="${contextPath}/resources/images/header/logoSample2.png" alt="logo" class="main_logo_img">
                 </div>
             </h1>
             <nav>
@@ -71,7 +73,7 @@
             </nav>
             <div id="login_area">
                 <ul>
-                    <li class="srch_btn"><a href="#"><img class="srch_img" src="images/search.png" alt="search"></a></li>
+                    <li class="srch_btn"><a href="#"><img class="srch_img" src="${contextPath}/resources/images/search.png" alt="search"></a></li>
                     <li><a href="#">로그인</a></li>
                     <li><a href="#">회원가입</a></li>
                 </ul>
@@ -82,7 +84,7 @@
                         <legend>검색영역</legend>
                         <label for="srch" class="hidden">검색</label>
                         <input type="search" id="srch" placeholder="검색어를 입력하세요">
-                        <button type="submit" class="srch_btn"><img src="${contextPath}/umbti/images/search.png" alt="search"></button>
+                        <button type="submit" class="srch_btn"><img src="${contextPath}/resources/images/search.png" alt="search"></button>
                     </fieldset>
                 </form>
             </div>
@@ -115,7 +117,7 @@
                 </div>
                 <!-- 하단 '우나프로젝트' 영역 -->
                 <p class="umbti_title">나는 어떤 행성을 닮았을까?</p>
-                <div class="umbti_start" title="" onclick="location.href='${contextPath}/umbti/umbti.html'">
+                <div class="umbti_start" title=""  onclick="location.href='${contextPath}/umbtimap/umbti.una'">
                     테스트 시작하기
                 </div>
                 <p class="umbti_now">현재 <span class="umbti_now_num">${umbti_count}</span>명이 참여했어요.</p>

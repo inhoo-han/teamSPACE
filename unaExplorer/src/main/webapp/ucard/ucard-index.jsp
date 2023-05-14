@@ -13,14 +13,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>우나카드뒤집기</title>
-    <link rel="stylesheet" href="${contextPath}/ucard/css/jquery-ui.min.css">
-    <link rel="stylesheet" href="${contextPath}/ucard/css/reset.css">
-    <link rel="stylesheet" href="${contextPath}/ucard/css/header&footer.css">
-    <link rel="stylesheet" href="${contextPath}/ucard/css/ucard-index.css">
-    <link rel="shortcut icon" type="image/icon" href="${contextPath}/ucard/images/header/logoSample2.png">
-    <script src="${contextPath}/ucard/js/jquery-3.6.3.min.js"></script>
-    <script src="${contextPath}/ucard/js/jquery-ui.min.js"></script>
-    <script src="${contextPath}/ucard/js/header&footer.js"></script>
+    <link rel="stylesheet" href="${contextPath}/resources/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/reset.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/header&footer.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/bookmark_playground.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/ucard-index.css">
+    <link rel="shortcut icon" type="image/icon" href="${contextPath}/resources/images/header/logoSample2.png">
+    <script src="${contextPath}/resources/js/jquery-3.6.3.min.js"></script>
+    <script src="${contextPath}/resources/js/jquery-ui.min.js"></script>
+    <script src="${contextPath}/resources/js/header&footer.js"></script>
 </head>
 <body>
     <!-------------------- [S] #wrap -------------------->
@@ -39,7 +40,7 @@
             <h1 class="home" onclick="location.href='../index/index.html'">
                 <span>우나</span>
                 <div class="logo">
-                    <img src="${contextPath}/ucard/images/header/logoSample2.png" alt="logo" class="main_logo_img">
+                    <img src="${contextPath}/resources/images/header/logoSample2.png" alt="logo" class="main_logo_img">
                 </div>
             </h1>
             <nav>
@@ -71,7 +72,7 @@
             </nav>
             <div id="login_area">
                 <ul>
-                    <li class="srch_btn"><a href="#"><img class="srch_img" src="${contextPath}/ucard/images/search.png" alt="search"></a></li>
+                    <li class="srch_btn"><a href="#"><img class="srch_img" src="${contextPath}/resources/images/search.png" alt="search"></a></li>
                     <li><a href="#">로그인</a></li>
                     <li><a href="#">회원가입</a></li>
                 </ul>
@@ -82,7 +83,7 @@
                         <legend>검색영역</legend>
                         <label for="srch" class="hidden">검색</label>
                         <input type="search" id="srch" placeholder="검색어를 입력하세요">
-                        <button type="submit" class="srch_btn"><img src="${contextPath}/ucard/images/search.png" alt="search"></button>
+                        <button type="submit" class="srch_btn"><img src="${contextPath}/resources/images/search.png" alt="search"></button>
                     </fieldset>
                 </form>
             </div>
@@ -122,7 +123,7 @@
                     </div>
                 </div>
                 <!-- 시작하기 버튼 영역 -->
-                <div class="ucard_start" title="" onclick="location.href='${contextPath}/ucard/ucard-inner.jsp'">
+                <div class="ucard_start" title="" onclick="location.href='${contextPath}/ucardmap/ucardInner.una'">
                     입장하기
                 </div>
             </div>

@@ -7,42 +7,34 @@
 	request.setCharacterEncoding("utf-8");
 %>
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>우나카드뒤집기</title>
-    <link rel="stylesheet" href="${contextPath}/resources/css/jquery-ui.min.css">
+    <title>TeamSPACE</title>
     <link rel="stylesheet" href="${contextPath}/resources/css/reset.css">
-    <link rel="stylesheet" href="${contextPath}/resources/css/header&footer.css">
-    <link rel="stylesheet" href="${contextPath}/resources/css/bookmark_playground.css">
-    <link rel="stylesheet" href="${contextPath}/resources/css/ucard-inner.css">
-    <link rel="shortcut icon" type="image/icon" href="${contextPath}/resources/images/header/logoSample2.png">
+    <link rel="stylesheet" href="${contextPath}/resources/css/header&footer_index.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/index.css">
+     <link rel="shortcut icon" type="image/icon" href="${contextPath}/resources/images/header/logoSample2.png">
     <script src="${contextPath}/resources/js/jquery-3.6.3.min.js"></script>
     <script src="${contextPath}/resources/js/jquery-ui.min.js"></script>
-    <script src="${contextPath}/resources/js/header&footer.js"></script>
+    <script src="${contextPath}/resources/js/header&footer_index.js"></script>
+    <script src="${contextPath}/resources/js/index.js"></script>
 </head>
 <body>
     <!-------------------- [S] #wrap -------------------->
     <div id="wrap">
-        <!-- bookmark_menu -->
-        <div id="bookmark_div_wrap">
-            <ul id="bookmark_ul">
-                <li class="bookmark_li bk_title">참여마당</li>
-                <li class="bookmark_li bk_li_1"><a href="#">두근두근 추첨마당</a></li>
-                <li class="bookmark_li bk_li_3"><a href="#">모여봐요 모임마당</a></li>
-                <li class="bookmark_li bk_li_4"><a href="#">복작복작 놀이마당</a></li>
-            </ul>
-        </div>
         <!---------- [S] header ---------->
         <header>
-            <h1 class="home" onclick="location.href='../index/index.html'">
+            <!------- header .home //로고영역// ------->
+            <h1 class="home">
                 <span>우나</span>
                 <div class="logo">
-                    <img src="${contextPath}/resources/images/header/logoSample2.png" alt="logo" class="main_logo_img">
+                    <img src="${contextPath}/resources/images/header/logoSample2.png" alt="logo">
                 </div>
             </h1>
+            <!------- header nav //탑메뉴영역// ------->
             <nav>
                 <ul class="tMenu">
                     <li class="menu">
@@ -57,7 +49,7 @@
                         <ul class="subMenu">
                             <li class="smenu"><a href="#">두근두근 추첨마당</a></li>
                             <li class="smenu"><a href="#">모여봐요 모임마당</a></li>
-                            <li class="smenu"><a href="#">복작복작 놀이마당</a></li>
+                            <li class="smenu"><a href="${contextPath}/fst_pg/fst_pg.jsp">복작복작 놀이마당</a></li>
                         </ul>
                     </li>
                     <li class="menu">
@@ -70,6 +62,7 @@
                     </li>
                 </ul>
             </nav>
+            <!------- header .login_area //로그인, 회원가입 버튼영역// ------->
             <div id="login_area">
                 <ul>
                     <li class="srch_btn"><a href="#"><img class="srch_img" src="${contextPath}/resources/images/search.png" alt="search"></a></li>
@@ -77,6 +70,7 @@
                     <li><a href="#">회원가입</a></li>
                 </ul>
             </div>
+            <!------- header .header_search //검색영역// --  ----->
             <div id="header_search">
                 <form action="#" method="post" name="search">
                     <fieldset>
@@ -89,56 +83,49 @@
             </div>
         </header>
         <!---------- [E] header ---------->
-        <!---------- [S] h2 title and BG img div ---------->
-        <div id="title_bg_wrap">
-            <h2 id="sub_page_h2">복작복작 놀이마당</h2>
-        </div>
-        <!---------- [E] h2 title and BG img div ---------->
         <!---------- [S] #container ---------->
         <div id="container">
-        <!-- 배경에 육각형을 넣어보고 싶어졌다. -->
-        	<div class="bg_container">
-	        	<div class="bg_polygon bg_polygon1">&nbsp;</div>	
-	        	<div class="bg_polygon bg_polygon2">&nbsp;</div>	
-	        	<div class="bg_polygon bg_polygon3">&nbsp;</div>	
-	        	<div class="bg_polygon bg_polygon4">&nbsp;</div>	
-	        	<div class="bg_polygon bg_polygon5">&nbsp;</div>	
-        	</div>
-            <!-- width 65%인 내용 영역 -->
-            <div id="ucard_area">
-                <!-- 프로젝트 이름 영역 -->
-                <div class="our_name">우나프로젝트</div>
-                <!-- 게임방법, 게임시작, 랭킹 버튼 영역 -->
-                <div id="polygon_game_btn_area">
-                    <div class="polygon_game_btn howto">
-                        <div class="poly_game_btn_inner" onclick="location.href='${contextPath}/ucardmap/ucardHowto.una'">
-                            <p>게임<br>방법</p>
-                        </div>
-                    </div>
-                    <div class="polygon_game_btn gamestart">
-                        <div class="poly_game_btn_inner" onclick="location.href='${contextPath}/ucardmap/ucardGamestart.una'">
-                            <p>게임<br>시작</p>
-                        </div>
-                    </div>
-                    <div class="polygon_game_btn ranking">
-                        <div class="poly_game_btn_inner" onclick="location.href='${contextPath}/ucardmap/ucardRanking2.una'">
-                            <p>랭킹<br>확인</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- 하단 육각형 게임 로고 영역 -->
-                <div id="polygon_area" onclick="location.href='${contextPath}/ucardmap/ucardIndex.una'">
-                    <!-- 왼쪽 poly는 테두리가 필요해서 내부 poly 존재-->
-                    <div class="polygon poly_left">
-                        <div class="poly_left_inner">
-                            <p class="poly_left_p">카드</p>
-                        </div>
-                    </div>
-                    <!-- 오른쪽 poly -->
-                    <div class="polygon poly_right">
-                        <p class="poly_right_p">뒤집기</p>
-                    </div>
-                </div>
+            <!-- 캐치프레이즈 영역 -->
+            <div id="text_area">
+                <p class="main_text">
+                    <span class="text text1">내 코드도</span>
+                    <span class="text text2">챗GPT가 짜 줬으면</span>
+                    <span class="text text3">좋겠다.</span>
+                </p>
+                <p class="sub_text">
+                    <span class="text">by 팀우나의 한인후</span>
+                </p>
+            </div>
+            <!-- 뭔가 하나 더 추가될 중간 영역 -->
+            <div id="i_dont_know"></div>
+            <!-- 천체영역 -->
+            <div id="space_area">
+                <div class="cele">
+                    <ul class="cele_ul">
+                        <li class="celestial celestial1">
+                            <img src="${contextPath}/resources/images/sun.png" alt="sun" title="태양계로 이동">
+                            <p class="title">태양계로 가보기</p>
+                        </li>
+                        <li class="celestial celestial2">
+                            <img src="${contextPath}/resources/images/ngc7293.png" alt="ngc7293" title="성운,성단으로 이동">
+                            <p class="title">성운, 성단으로 가보기</p>
+                        </li>
+                        <li class="celestial celestial3">
+                            <img src="${contextPath}/resources/images/galaxy_20.png" alt="galaxy" title="은하로 이동">
+                            <p class="title">은하로 가보기</p>
+                        </li>
+                        <li class="celestial celestial4">
+                            <img src="${contextPath}/resources/images/m1.png" alt="m1" title="아직 안이동">
+                            <p class="title">우주어디론가 가보기</p>
+                        </li>
+                    </ul>
+                </div>    
+            </div>
+            <div id="earth_area_v2">
+                <img id="earth_v2" src="${contextPath}/resources/images/earth_sample2.gif" alt="earth">
+            </div>
+            <div id="go_up_div">
+                <img src="${contextPath}/resources/images/go_up.png" alt="위로이동" class="go_up_img">
             </div>
         </div>
         <!---------- [E] container ---------->
