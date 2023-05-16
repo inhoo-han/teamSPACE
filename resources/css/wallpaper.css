@@ -1,0 +1,144 @@
+@charset "UTF-8";
+
+/* * * * * * * * * * header 영역 * * * * * * * * * */
+html,body,#wrap{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-width: 1100px;
+}
+/* 드래그 불가 */
+body {
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    overflow-x: hidden; 
+}
+/* * * * * * * * * * [S] #container * * * * * * * * * */
+#container{
+    position: relative;
+    width: 100%;
+    min-width: 1100px;
+    height: auto;
+    background-color: #fff;
+    margin: 50px 0 80px 0;
+}
+/* width 65%영역 */
+#wallpaper_area{
+    position: relative;
+    width: 65%;
+    min-width: 1100px;
+    height: auto;
+    margin: 0 auto;
+    border-top: 2px solid #000;
+}
+/* 월페이퍼 타이틀 영역 */
+.wallpaper_area_title{
+	position: relative;
+	padding: 10px;
+	margin: 0 10px;
+	border-bottom: 1px solid #000;
+}
+.wallpaper_area_title h3{
+	padding-top: 10px;
+	font-family: 'sqneoHV';
+	font-size: 30px;
+	color: #333;
+}
+.wallpaper_area_title p{
+	padding: 10px 0;
+	font-size: 20px;
+	color: #333;
+}
+/* 이미지 슬라이드 영역 */
+.animation_canvas{
+    position: relative;
+    margin: 50px auto;
+    width: 600px;
+    border-radius: 3px;
+     overflow: hidden;
+ }
+ .slider_panel{
+     position: relative;
+     width: 4200px;
+}
+.slider_image{
+    width: 600px;
+    height: 400px;
+    float: left;
+}
+
+/* prev, next 버튼 영역*/
+.next, .prev {
+    position: absolute;
+    /* background-color: #fff; */
+    display: inline-block;
+    width: 30px;
+    height: 60px;
+    white-space: nowrap;
+    overflow: hidden;
+    background-image: url(../images/icons.png);
+    background-repeat: no-repeat;
+    cursor: pointer;
+    z-index: 10;
+    visibility: hidden;
+}
+.next {
+    background-position: 47% 16%;
+    left: 550px;
+    top: 170px;
+}
+.prev {
+    background-position: 42% 16%;
+    left: 20px;
+    top: 170px;
+}
+
+/* wallpaper image 영역 */
+#image_area{
+	position: relative;
+	margin: 0 auto;
+}
+.wall_img_div{
+	display: inline-block;
+	width: 330px;
+	height: 220px;
+	margin-left: 48px;
+	margin-bottom: 50px;
+	border-radius: 3px;
+	box-shadow: 3px 3px 3px #777;
+	overflow: hidden;
+}
+.wall_img{
+	width: 330px;
+	transition: all 0.3s;
+}
+
+.wall_img3{
+	margin-right: 46px;
+}
+.wall_img:hover{
+	transform: scale(1.1);
+}
+/* 왜 있는지 모를 하단 버튼 */
+.wall_page {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    padding-top: 30px;
+}
+.wall_page a {
+    border: 1px solid #999;
+    color: #999;
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    box-sizing: border-box;
+    padding-top: 7px;
+}
+.wall_page a:hover {
+    background-color: rgba(22, 8, 58, 0.7);
+    color: #fff
+}
+
