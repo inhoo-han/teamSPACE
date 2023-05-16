@@ -39,12 +39,16 @@
         </div>
         <!---------- [S] header ---------->
         <header>
-            <h1 class="home" onclick="location.href='${contextPath}/index.una'">
-                <span>우나</span>
+            <div class="home">
+                <h1>
+                    <a href="${contextPath}/index/index.jsp">우나</a>
+                </h1>
                 <div class="logo">
-                    <img src="${contextPath}/resources/images/header/logoSample2.png" alt="logo" class="main_logo_img">
+                    <a href="${contextPath}/index/index.jsp">
+                        <img class="main_logo_img" src="${contextPath}/resources/images/header/logoSample2.png" alt="logo">
+                    </a> 
                 </div>
-            </h1>
+            </div>
             <nav>
                 <ul class="tMenu">
                     <li class="menu">
@@ -98,6 +102,14 @@
         <!---------- [E] h2 title and BG img div ---------->
         <!---------- [S] #container ---------->
         <div id="container">
+        	<!-- 배경에 육각형을 넣어보고 싶어졌다. -->
+        	<div class="bg_container">
+	        	<div class="bg_polygon bg_polygon1">&nbsp;</div>	
+	        	<div class="bg_polygon bg_polygon2">&nbsp;</div>	
+	        	<div class="bg_polygon bg_polygon3">&nbsp;</div>	
+	        	<div class="bg_polygon bg_polygon4">&nbsp;</div>	
+	        	<div class="bg_polygon bg_polygon5">&nbsp;</div>	
+        	</div>        
             <!-- 이미지+타이틀 추가해야 함 -->
             <!-- width 65%인 내용 영역 -->
             <div id="polygon_area">
@@ -111,7 +123,6 @@
                         <div class="umbti_area">
                             <p class="umbti_head">당신과 닮은 별자리는</p>
                             <p class="umbti_result_name">전갈자리</p>
-                            <p class="umbti_result_explanation">
                             <img src="${contextPath}/resources/images/umbti_result/star_scorpio.png" alt="전갈자리이미지">
                         </div>
                     </div>
@@ -125,26 +136,24 @@
                 	</div>
                 </div>
                 <!-- 나와 잘 맞는 육각형 영역 테두리 -->
-                <div id="poly_good" class="sub_polygon_border">
+                <div id="poly_good" class="sub_polygon_border" onclick="location.href='${contextPath}/umbtimap/result2.una'">
                     <!-- 서브 육각형 영역 내부 -->
                     <div class="sub_polygon">
                         <!-- 서브 결과 출력 영역 -->
                         <div class="umbti_area">
-                            <p class="umbti_head">사이가 좋은 행성</p>
-                            <p class="umbti_result_name">목성</p>
-                            <img src="images/planet_1.png" alt="목성이미지">
+                            <p class="umbti_head">사이 좋은<br>별자리</p>
+                            <p class="umbti_result_name">물고기자리</p>
                         </div>
                     </div>
                 </div>
                 <!-- 나와 안 맞는 육각형 영역 테두리 -->
-                <div id="poly_bad" class="sub_polygon_border">
+                <div id="poly_bad" class="sub_polygon_border" onclick="location.href='${contextPath}/umbtimap/result3.una'">
                     <!-- 서브 육각형 영역 내부 -->
                     <div class="sub_polygon">
                         <!-- 서브 결과 출력 영역 -->
                         <div class="umbti_area">
-                            <p class="umbti_head">사이가 나쁜 행성</p>
-                            <p class="umbti_result_name">천왕성</p>
-                            <img src="images/blue1.png" alt="천왕성이미지">
+                            <p class="umbti_head">사이 나쁜<br>별자리</p>
+                            <p class="umbti_result_name">페가수스자리</p>
                         </div>
                     </div>
                 </div>

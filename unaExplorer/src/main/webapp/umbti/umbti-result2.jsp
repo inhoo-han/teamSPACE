@@ -12,17 +12,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>우나카드뒤집기</title>
-    <link rel="stylesheet" href="${contextPath}/resources/css/jquery-ui.min.css">
+    <title>우나엠비티아이</title>
     <link rel="stylesheet" href="${contextPath}/resources/css/reset.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/header&footer.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/bookmark_playground.css">
-    <link rel="stylesheet" href="${contextPath}/resources/css/ucard-gamestart.css">
-    <link rel="shortcut icon" type="image/icon" href="${contextPath}/resources/images/header/logoSample2.png">
+    <link rel="stylesheet" href="${contextPath}/resources/css/umbti-result.css">
+     <link rel="shortcut icon" type="image/icon" href="${contextPath}/resources/images/header/logoSample2.png">
     <script src="${contextPath}/resources/js/jquery-3.6.3.min.js"></script>
     <script src="${contextPath}/resources/js/jquery-ui.min.js"></script>
+    <script src="${contextPath}/resources/js/dep_menu.js"></script>
     <script src="${contextPath}/resources/js/header&footer.js"></script>
-    <script src="${contextPath}/resources/js/ucard-gamestart.js"></script>
+    <script src="${contextPath}/resources/js/umbti.js"></script>
+    <script type="text/javascript"></script>
 </head>
 <body>
     <!-------------------- [S] #wrap -------------------->
@@ -108,78 +109,59 @@
 	        	<div class="bg_polygon bg_polygon3">&nbsp;</div>	
 	        	<div class="bg_polygon bg_polygon4">&nbsp;</div>	
 	        	<div class="bg_polygon bg_polygon5">&nbsp;</div>	
-        	</div>
+        	</div>        
+            <!-- 이미지+타이틀 추가해야 함 -->
             <!-- width 65%인 내용 영역 -->
-            <div id="ucard_area">
-                <!-- 프로젝트 이름 영역 -->
-                <div class="our_name">우나프로젝트</div>
-                <!-- 게임영역 -->
-                <div class="content">
-                    <!-- 지금은 상단 영역. 예전에는 왼쪽이었음 -->
-                    <div class="side left">
-                        <div class="header">
+            <div id="polygon_area">
+                <!-- 상단 진행도 숫자표시 영역 -->
+                <div class="poly_count hidden">0</div>
+                <!-- 메인 육각형 영역 테두리 -->
+                <div id="poly_main" class="polygon_border">
+                    <!-- 메인 육각형 영역 내부 -->
+                    <div class="polygon">
+                        <!-- 결과 출력 영역 -->
+                        <div class="umbti_area">
+                            <p class="umbti_head">당신과 닮은 별자리는</p>
+                            <p class="umbti_result_name">물고기자리</p>
+                            <img src="${contextPath}/resources/images/umbti_result/star_fish.png" alt="물고기자리이미지">
                         </div>
-                        <!-- 게임 진행 영역 -->
-                        <div id="div_gameBoard" class="gameBoard"></div>
-                        <!-- 게임 끝난 뒤 뜨는 결과 영역 -->
-                        <div id="game_over" style="z-index: -1;">
-                            <c:if test="${isLogon == true && log_id != null}">
-                            <div class="game_over_alert">
-	                            <span id="game_score_count">0</span><span>번 만에 카드를 다 맞추셨습니다.</span>
-	                            <form id="fm_score" action="${contextPath}/ucardmap/ucardRanking.una" method="post" >
-	                            	<input type="hidden" name="ucard_recent" >
-	                            	<input class="rank_submit_btn" type="submit" value="랭킹 등록하기">
-	                            </form>
-	                        </div>
-                            </c:if>
-                            <c:if test="${isLogon == false || log_id == null}">
-                            	<span>회원 등록하시면 점수를 랭킹에 등록하실 수 있습니다!</span>
-                            	<p class="rank_login_btn" onclick="location.href='${contextPath}/member/loginForm.do'">로그인 하러가기</p>
-                            </c:if>
-                        </div>
-                    </div>
-                    &nbsp;&nbsp;
-                    <!-- 지금은 하단 영역. 예전에는 오른쪽이어서 right임 -->
-                    <div class="side right">
-                        <div class="btnArea">
-                            <input type="button" id="btn_start" name="btn_start" value="시작" /> &nbsp;&nbsp;
-                            <input type="button" id="btn_restart" name="btn_restart" value="재시작" style="visibility: hidden;">
-                        </div>	
-                        <br/>
-                        <div id="div_addPlayer">
-                            <table id="tbl_addPlayer">
-                                <tr class="tbl_addPlayer_tr1">
-                                    <td>참가자</td>
-                                    <c:if test="${isLogon == true && log_id != null }"><td>: ${log_id}</td></c:if>
-                                    <c:if test="${isLogon == false || log_id == null}"><td>: 익명의 참가자</td></c:if>
-                                </tr>
-                                <tr class="tbl_addPlayer_tr2">
-                                    <td>횟수</td>
-                                    <td>: <span id="click_count"></span>번</td>
-                                </tr>
-                            </table>
-            
-                            <br/>
-                        </div>
-                        <br/><br/>
-                        <br/><br/>
-                        <span id="winner" style="font-size: 15px;"></span>
                     </div>
                 </div>
-                <div id="mask"></div>
-                <!-- 하단 육각형 게임 로고 영역 -->
-                <div id="polygon_area" onclick="location.href='${contextPath}/ucardmap/ucardIndex.una'">
-                    <!-- 왼쪽 poly는 테두리가 필요해서 내부 poly 존재-->
-                    <div class="polygon poly_left">
-                        <div class="poly_left_inner">
-                            <p class="poly_left_p">카드</p>
+                <div class="result_detail">
+                	<div class="result_detail_text">
+                		<p>혼자 시간 보내는 것을 매우 선호해요. 많은 사람과 시간을 보낸 후에는 꼭 혼자만의 시간이 필요해요.</p>
+                		<p>남에게 관심이 없기 때문에 웬만한 일에는 상처를 받지 않아요.</p>
+                		<p>평소에는 말이 없다가도 내가 관심있는 분야가 나오면 말이 많아져요.</p>
+                		<p>게으른 천재예요. 시작하면 잘하지만 맨날 미루고 말아요. 혼자 있는게 너무 행복한 타입이에요.</p>
+                	</div>
+                </div>
+                <!-- 나와 잘 맞는 육각형 영역 테두리 -->
+                <div id="poly_good" class="sub_polygon_border" onclick="location.href='${contextPath}/umbtimap/result3.una'">
+                    <!-- 서브 육각형 영역 내부 -->
+                    <div class="sub_polygon">
+                        <!-- 서브 결과 출력 영역 -->
+                        <div class="umbti_area">
+                            <p class="umbti_head">사이 좋은<br>별자리</p>
+                            <p class="umbti_result_name">페가수스자리</p>
                         </div>
                     </div>
-                    <!-- 오른쪽 poly -->
-                    <div class="polygon poly_right">
-                        <p class="poly_right_p">뒤집기</p>
+                </div>
+                <!-- 나와 안 맞는 육각형 영역 테두리 -->
+                <div id="poly_bad" class="sub_polygon_border" onclick="location.href='${contextPath}/umbtimap/result.una'">
+                    <!-- 서브 육각형 영역 내부 -->
+                    <div class="sub_polygon">
+                        <!-- 서브 결과 출력 영역 -->
+                        <div class="umbti_area">
+                            <p class="umbti_head">사이 나쁜<br>별자리</p>
+                            <p class="umbti_result_name">전갈자리</p>
+                        </div>
                     </div>
                 </div>
+                <!-- 하단 '우나프로젝트' 영역 -->
+                <div class="test_restart" onclick="location.href='${contextPath}/umbtimap/index.una'">
+                    테스트 다시하기
+                </div>
+                <!-- <div class="share" onclick="clip()">링크로 공유하기</div> -->
             </div>
         </div>
         <!---------- [E] container ---------->

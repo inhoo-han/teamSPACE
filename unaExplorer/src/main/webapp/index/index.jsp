@@ -28,19 +28,23 @@
         <!---------- [S] header ---------->
         <header>
             <!------- header .home //로고영역// ------->
-            <h1 class="home">
-                <span>우나</span>
+            <div class="home">
+                <h1>
+                    <a href="${contextPath}/index/index.jsp">우나</a>
+                </h1>
                 <div class="logo">
-                    <img src="${contextPath}/resources/images/header/logoSample2.png" alt="logo">
+                    <a href="${contextPath}/index/index.jsp">
+                        <img class="main_logo_img" src="${contextPath}/resources/images/header/logoSample2.png" alt="logo">
+                    </a> 
                 </div>
-            </h1>
+            </div>
             <!------- header nav //탑메뉴영역// ------->
             <nav>
                 <ul class="tMenu">
                     <li class="menu">
                         <a href="#">우주마당</a>
                         <ul class="subMenu">
-                            <li class="smenu"><a href="#">알아봐요 탐험마당</a></li>
+                            <li class="smenu"><a href="${contextPath}/book.una">알아봐요 탐험마당</a></li>
                             <li class="smenu"><a href="#">신기해요 소식마당</a></li>
                         </ul>
                     </li>
@@ -57,7 +61,7 @@
                         <ul class="subMenu">
                             <li class="smenu"><a href="#">여기주목 공지사항</a></li>
                             <li class="smenu"><a href="#">반짝반짝 우리소개</a></li>
-                            <li class="smenu"><a href="#">공유해요 자료마당</a></li>
+                            <li class="smenu"><a href="${contextPath}/wallpaper/wallpaper.jsp">공유해요 자료마당</a></li>
                         </ul>
                     </li>
                 </ul>

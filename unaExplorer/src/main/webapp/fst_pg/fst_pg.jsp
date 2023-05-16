@@ -14,6 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TeamSPACE</title>
     <link rel="stylesheet" href="${contextPath}/resources/css/reset.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/header&footer.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/dep_menu.css">
      <link rel="shortcut icon" type="image/icon" href="${contextPath}/resources/images/header/logoSample2.png">
     <script src="${contextPath}/resources/js/jquery-3.6.3.min.js"></script>
@@ -25,12 +26,16 @@
     <div id="wrap">
         <!---------- [S] header ---------->
         <header>
-            <h1 class="home">
-                <span>우나</span>
+            <div class="home">
+                <h1>
+                    <a href="${contextPath}/index/index.jsp">우나</a>
+                </h1>
                 <div class="logo">
-                    <img src="${contextPath}/resources/images/header/logoSample2.png" alt="logo" class="main_logo_img">
+                    <a href="${contextPath}/index/index.jsp">
+                        <img class="main_logo_img" src="${contextPath}/resources/images/header/logoSample2.png" alt="logo">
+                    </a> 
                 </div>
-            </h1>
+            </div>
             <nav>
                 <ul class="tMenu">
                     <li class="menu">

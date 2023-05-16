@@ -38,12 +38,16 @@
         </div>
         <!---------- [S] header ---------->
         <header>
-            <h1 class="home" onclick="location.href='${contextPath}/index.una'">
-                <span>우나</span>
+            <div class="home">
+                <h1>
+                    <a href="${contextPath}/index/index.jsp">우나</a>
+                </h1>
                 <div class="logo">
-                    <img src="${contextPath}/resources/images/header/logoSample2.png" alt="logo" class="main_logo_img">
+                    <a href="${contextPath}/index/index.jsp">
+                        <img class="main_logo_img" src="${contextPath}/resources/images/header/logoSample2.png" alt="logo">
+                    </a> 
                 </div>
-            </h1>
+            </div>
             <nav>
                 <ul class="tMenu">
                     <li class="menu">
@@ -97,6 +101,14 @@
         <!---------- [E] h2 title and BG img div ---------->
         <!---------- [S] #container ---------->
         <div id="container">
+        	<!-- 배경에 육각형을 넣어보고 싶어졌다. -->
+        	<div class="bg_container">
+	        	<div class="bg_polygon bg_polygon1">&nbsp;</div>	
+	        	<div class="bg_polygon bg_polygon2">&nbsp;</div>	
+	        	<div class="bg_polygon bg_polygon3">&nbsp;</div>	
+	        	<div class="bg_polygon bg_polygon4">&nbsp;</div>	
+	        	<div class="bg_polygon bg_polygon5">&nbsp;</div>	
+        	</div>        
             <!-- 이미지+타이틀 추가해야 함 -->
             <!-- width 65%인 내용 영역 -->
             <div id="polygon_area">

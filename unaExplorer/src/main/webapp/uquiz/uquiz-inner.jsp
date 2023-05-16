@@ -41,12 +41,16 @@
         </div>
         <!---------- [S] header ---------->
         <header>
-            <h1 class="home" onclick="location.href='${contextPath}/index/index.html'">
-                <span>우나</span>
+            <div class="home">
+                <h1>
+                    <a href="${contextPath}/index/index.jsp">우나</a>
+                </h1>
                 <div class="logo">
-                    <img src="${contextPath}/resources/images/header/logoSample2.png" alt="logo" class="main_logo_img">
+                    <a href="${contextPath}/index/index.jsp">
+                        <img class="main_logo_img" src="${contextPath}/resources/images/header/logoSample2.png" alt="logo">
+                    </a> 
                 </div>
-            </h1>
+            </div>
             <nav>
                 <ul class="tMenu">
                     <li class="menu">

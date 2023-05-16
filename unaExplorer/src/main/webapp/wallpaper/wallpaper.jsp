@@ -16,10 +16,12 @@
     <link rel="stylesheet" href="${contextPath}/resources/css/reset.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/header&footer.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/bookmark_notice.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/colorbox.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/wallpaper.css">
     <link rel="shortcut icon" type="image/icon" href="${contextPath}/resources/images/header/logoSample2.png">
     <script src="${contextPath}/resources/js/jquery-3.6.3.min.js"></script>
     <script src="${contextPath}/resources/js/jquery-ui.min.js"></script>
+    <script src="${contextPath}/resources/js/jquery.colorbox.js"></script>
     <script src="${contextPath}/resources/js/wallpaper.js"></script>
 </head>
 <body>
@@ -79,7 +81,7 @@
             </nav>
             <div id="login_area">
                 <ul>
-                    <li class="srch_btn"><a href="#"><img class="srch_img" src="images/search.png" alt="search"></a></li>
+                    <li class="srch_btn"><a href="#"><img class="srch_img" src="${contextPath}/resources/images/search.png" alt="search"></a></li>
                     <li><a href="/subpage/login_join/login/login.html">로그인</a></li>
                     <li><a href="/subpage/login_join/join/join.html">회원가입</a></li>
                 </ul>
@@ -115,31 +117,36 @@
 	             	<!-- 실제 슬라이드 길이(이미지가 담기는 곳) -->
 	             	<div class="slider_panel">
 	             		<!-- 각각의 이미지 -->
-	             		<img class="slider_image" src="${contextPath}/resources/images/wallpaper/wallpaper01.jpg" alt="첫 번째 슬라이드 이미지">
-	             		<img class="slider_image" src="${contextPath}/resources/images/wallpaper/wallpaper02.jpg" alt="두 번째 슬라이드 이미지">
-	             		<img class="slider_image" src="${contextPath}/resources/images/wallpaper/wallpaper03.jpg" alt="세 번째 슬라이드 이미지">
-	             		<img class="slider_image" src="${contextPath}/resources/images/wallpaper/wallpaper04.jpg" alt="네 번째 슬라이드 이미지">
-	             		<img class="slider_image" src="${contextPath}/resources/images/wallpaper/wallpaper05.jpg" alt="다섯 번째 슬라이드 이미지">
+	             		<img class="slider_image" src="${contextPath}/resources/images/wallpaper/1.jpg" alt="첫 번째 슬라이드 이미지">
+	             		<img class="slider_image" src="${contextPath}/resources/images/wallpaper/2.jpg" alt="두 번째 슬라이드 이미지">
+	             		<img class="slider_image" src="${contextPath}/resources/images/wallpaper/3.jpg" alt="세 번째 슬라이드 이미지">
+	             		<img class="slider_image" src="${contextPath}/resources/images/wallpaper/4.jpg" alt="네 번째 슬라이드 이미지">
+	             		<img class="slider_image" src="${contextPath}/resources/images/wallpaper/5.jpg" alt="다섯 번째 슬라이드 이미지">
 	             	</div>
 	             	<!-- 좌우 컨트롤 패널 영역 -->
 					<div class="next"></div>
 					<div class="prev"></div>
             	</div>
                 <!-- 이미지 목록-->
-                <div class="images">
-                    <div class="image_flex01">
-                        <a href="${contextPath}/resources/images/wallpaper/wallpaper01.jpg" download="${contextPath}/resources/images/wallpaper/wallpaper01.jpg">
-                       		<img src="${contextPath}/resources/images/wallpaper/wallpaper01.jpg" alt="배경이미지">
+                <div id="image_area">
+                	<c:forEach var="i" begin="1" end="5">
+                	<div class="wall_img_div">
+                        <a class="wall_img_cb" href="${contextPath}/resources/images/wallpaper/${i*3-2}.jpg" title="<a href='${contextPath}/resources/images/wallpaper/${i*3-2}.jpg' download>이미지 다운로드하기</a>">
+                       		<img class="wall_img wall_img1" src="${contextPath}/resources/images/wallpaper/${i*3-2}.jpg" alt="배경이미지">
                         </a>
-                        <img src="${contextPath}/resources/images/wallpaper/wallpaper02.jpg" alt="배경이미지">
-                        <img src="${contextPath}/resources/images/wallpaper/wallpaper02.jpg" alt="배경이미지">
-                        <img src="${contextPath}/resources/images/wallpaper/wallpaper02.jpg" alt="배경이미지">
                     </div>
+                    <div class="wall_img_div">
+                        <a class="wall_img_cb" href="${contextPath}/resources/images/wallpaper/${i*3-1}.jpg" title="<a href='${contextPath}/resources/images/wallpaper/${i*3-1}.jpg' download>이미지 다운로드하기</a>">
+                       		<img class="wall_img wall_img2" src="${contextPath}/resources/images/wallpaper/${i*3-1}.jpg" alt="배경이미지">
+                        </a>
+                    </div>   
+                    <div class="wall_img_div"> 
+                        <a class="wall_img_cb" href="${contextPath}/resources/images/wallpaper/${i*3}.jpg" title="<a href='${contextPath}/resources/images/wallpaper/${i*3}.jpg' download>이미지 다운로드하기</a>">
+                       		<img class="wall_img wall_img3" src="${contextPath}/resources/images/wallpaper/${i*3}.jpg" alt="배경이미지">
+                        </a>
+                    </div>    
+                    </c:forEach>
                 </div>
-            </div>
-            <div class="wall_page">
-                <a href="">1</a>
-                <a href="">2</a>
             </div>
         </div>
         <!---------- [E] container ---------->
