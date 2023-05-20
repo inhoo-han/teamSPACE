@@ -1,0 +1,224 @@
+@charset "utf-8";
+
+
+/* bookmark_menu */
+#bookmark_div_wrap{
+    position: fixed;
+    top: 450px;
+    width: 190px;
+    height: 200px;
+    min-height: 200px;
+    z-index: 1000;
+    text-align: center;
+    /* left: -233px; */
+    box-sizing: border-box;
+    overflow: hidden;
+    /* border-top: 2px solid #000;
+    border-bottom: 2px solid #000; */
+}
+#bookmark_div_wrap::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+/* #bookmark_sub_title{
+    position: relative;
+    width: 40px;
+    background-color: #f00;
+    height: 113px;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    cursor: pointer;
+    float: right;
+    box-sizing: border-box;
+    border: 2px solid rgb(32,32,55);
+    border-left: none;
+    top: -225px;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 0 10px 10px 0;
+    left: -4px;
+}
+#bookmark_sub_title>span{
+    position: relative;
+    display: inline-block;
+    color: #fff;
+    width: 20px;
+    left: -10px;
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'sqneoEB';
+} */
+#bookmark_ul{
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid rgb(32,32,55);
+    border-left: none;
+    border-right: none;
+}
+.bookmark_li{
+    position: relative;
+    height: 25%;
+    width: 100%;
+    background-color: #f0f0f0;
+    font-size: 18px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #999;
+
+}
+.bookmark_li:first-child{
+    background-color: #f00;
+    color: #fff;
+    font-family: 'sqneoEB';
+    font-size: 23px;
+    line-height: 50px;
+}
+.bookmark_li:nth-child(2){
+    background-color: orange;
+}
+.bookmark_li:nth-child(3){
+    /* border-right: 2px solid rgb(32,32,55); */
+}
+.bookmark_li:last-child{
+    border-bottom: none;
+    /* border-right: 2px solid rgb(32,32,55); */
+}
+.bookmark_li>a{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    line-height: 2.7;
+    color: #555;
+    font-family: 'sqneoEB';
+}
+.bookmark_li:first-child>a{
+    color: #fff;
+}
+
+
+#container {
+    position: relative;
+    width: 65%;
+    min-width: 1100px;
+    top: 50px;
+    height: auto;
+    /* border: 1px solid; */
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+#container::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.wrap_board {
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+   /* border: 1px solid red;*/
+    /* border: 1px solid; */
+    margin: 0 auto;
+
+}
+.wrap_content_view {
+    width: 100%;
+    position: relative;
+}
+.wrap_area_tit {
+   /* border: 2px solid red;*/
+    padding: 22px 10px;
+    border-top: 2px solid #999;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+
+.content_tit {
+    
+    font-size: 30px;
+    line-height: 46px;
+}
+.wrap_area_tit .content_info {
+    padding-top: 21px;
+    color: #888;
+    font-size: 14px;
+    letter-spacing: -1px;
+}
+
+.content_info {
+    display: block;
+}
+.wrap_area_content {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+}
+
+.inner {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    padding: 50px 70px 65px;
+}
+
+.inner p {
+    font-size: 20px;
+    text-align: left;
+    line-height: 35px;
+
+}
+.inner img {
+    width: 8%;
+    position: relative;
+    right: 0;
+}
+.box_prenext {
+    position: relative;
+    display: 100%;
+    width: 100%;
+    padding-top: 20px;
+    /*border: 1px solid red;*/
+}
+.list {
+    position: relative;
+    text-align: right;
+    padding-right: 0px;
+    margin: 30px;
+}
+.list a {
+    border: 1px solid black;
+    padding: 5px 10px;
+    position: relative;
+    bottom: 10px;
+    /*background-color: ;*/
+}
+.btn {
+    position: relative;
+    display: block;    
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn a {
+    border: 1px solid #ccc;
+    display: block;
+    height: 100px;
+    line-height: 100px;
+}
+.prev_page {
+    width: 50%;
+    height: 100px;
+    position: relative;
+    float: left;
+}
+
+.next_page {
+    position: relative;
+
+    width: 50%;
+    float: right;
+    height: 100px;
+    /*border: 1px solid #ccc;*/
+    
+}

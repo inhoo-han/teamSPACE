@@ -1,0 +1,122 @@
+#container{
+    position: relative;
+    width: 65%;
+    min-width: 1100px;
+    top: 50px;
+    height: auto;
+    /* border: 1px solid; */
+    margin: 0 auto;
+    margin-bottom: 50px;
+    border-top: 2px solid black ;
+    padding-top: 20px;
+}
+#container::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.contentArea {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+   /* border: 1px solid red;*/
+    /* overflow: hidden; */
+}
+
+.gallery {
+    margin: 0 auto;
+    width: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.gallery li{
+    float: left;
+    width: 32%;
+    
+    margin-right: 20px;
+  }
+  .gallery li:last-child{ 
+    margin-right: 0; }
+  
+  .gallery li a{
+    display: block; /* 영역적용위해 사용 */
+    width: 100%; 
+    /* border: 1px solid red; */
+    overflow: hidden;
+  
+    position: relative; /* absolute의 기본기준은 body로 처리 - 현재 요소로 기준변경 */
+  }
+  
+  .gallery figure{
+    width: 100%; 
+    height: 201px;
+    /* border: 2px solid red; */
+  }
+ 
+  .gallery figcaption{
+    width: 100%; 
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    position: absolute; /* 이미지와 겹치게 처리 */
+    top: 0; left: 0;
+    color: #fff; text-align: center;
+    line-height: 230px;
+    opacity: 0; /* 처음엔 안보이고 */
+    transition: 0.3s;
+  }
+  
+  .gallery a:hover figcaption, .gallery a:focus figcaption{
+    /* 마우스를 올리면 보이게 처리 */
+    opacity: 1;
+  }
+
+  .img_over {
+    /* border: 1px solid red; */
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: inline-block;
+    width: 32%;
+    height: 50px;
+    text-align: center;
+    top: 170px;
+    background-color: rgba(255, 255, 255, 0.3);
+    
+  }
+  .img_over img {
+    position: relative;
+    display: inline-block;
+    top: 10px;
+    cursor: pointer;
+  }
+
+  .dual_a {
+    position: relative;
+    display: flex;
+    z-index: 50;
+    width: 100%;
+    height: 250px;
+    bottom: 251px;
+    opacity: 0;
+
+  }
+  .detail_view, .download_a {
+    position: relative;
+    display: inline-block;
+    /* border: 1px solid blue; */
+    text-align: center;
+    font-size: 20px;
+    font-family: 'sqneoEB';
+    padding-top: 25%;
+    color: #ccc;
+    background-color: rgba(0,0,0,0.3);
+  }
+
+ .dual_a:hover {
+  opacity: 1;
+  transition: 0.3s
+ }
