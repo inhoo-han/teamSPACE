@@ -74,15 +74,12 @@ let setCount = 0;
 
 window.onload = function() {
     document.getElementById("click_count").innerHTML=setCount;
-    $("#btn_addPlayer").click(function() {
-        addTableRow();
-    });
 
     document.getElementById("btn_start").onclick = function() {
-        if(checkNameNull()) {
+        // if(checkNameNull()) {
             $("#btn_restart").css("visibility", "visible");
             start();
-        }
+        // }
     }
 
     document.getElementById("btn_restart").onclick = function() {
@@ -106,112 +103,17 @@ window.onload = function() {
     }
 }
 
-// tr 추가
-function addTableRow() {
-    var table = document.getElementById("tbl_addPlayer").childNodes.length -1;
-    
-    var tr = '<tr onmouseover="getRowIdx(this)" > <td>이름</td><td>: <input type=text name=name /><td/>'
-                    +'<td><input type=button name="delete" value="제거" onclick="delTableRow(1)" /></td> </tr>';
-    document.getElementById("tbl_addPlayer").innerHTML += tr;
-}
-
-// 마우스의 현재 테이블 idx 확인
-function getRowIdx(tr) {
-    trIdx = tr.rowIndex;
-}
-
-// 테이블 tr 삭제
-function delTableRow(param) {
-    // var table = document.getElementById("tbl_addPlayer");
-    // if(param == 1) {
-    // 	table.removeChild(table.childNodes[trIdx]);
-    // } else {
-    // 	table.removeChild(table.childNodes[table.childNodes.length-1]);
-    // }			
-}
-
 // 참가자 이름 비어있는지 체크
-function checkNameNull() {
-    // var tbl = $("#tbl_addPlayer tr").length;
+// function checkNameNull() {
 
-    // for(var i = 0; i < tbl; i++) {
-    // 	var ibx = $("input[name=name]").eq(i).val();
-        
-    // 	// 이름 공백 검사
-    // 	if(ibx == "") {
-    // 		alert("참가자의 이름을 입력해주세요");
-    // 		players = [];
-    // 		return false;
-    // 	}
-
-    // 	// 이름 중복자 검사
-    // 	if(i > 0) {
-    // 		for (var j = 0; j < players.length; j++) {
-    // 			var tmpName = players[j];
-
-    // 			if(ibx == tmpName) {
-    // 				alert("참가자의 이름을 각각 다르게 입력해주세요");
-    // 				players = [];
-    // 				return false;
-    // 			} 
-    // 		}
-    // 	}
-
-    // 	players.push(ibx);
-    // 	scoreArr.push(0);
-    // }
-
-    return true;
-}
-
-// 순서 무작위 배치
-function batchOrderRandom() {
-    // var arrR = new Array();
-
-    // while(true) {
-    // 	var random = Math.floor(Math.random() * players.length);
-
-    // 	if(!orderMap.containsKey(random)) {
-    // 		orderMap.put(random, players[random]);
-    // 		arrR.push(random);
-    // 	}
-
-    // 	if(orderMap.size() == players.length) break;
-    // }
-
-    // orders = arrR;
-}
-
-// 플레이어 세팅
-function setUpPlayer() {
-    // var id_playBoard = "#div_playerBoard";
-
-    // var tag = "<p>순서는 무작위로 선정됩니다.</p>";
-    // tag += "<span> <span id=turn style=color:blue></span>의 차례입니다.</span><br/><br/>";
-    // tag += "<table>";
-
-    // for (var i = 0; i < orderMap.size(); i++) {
-    // 	tag += "<tr>";
-    // 	tag += "<td> <span id=arrow" + parseInt(i+1) + " style='visibility:hidden; color:red;' >▶</span></td>";
-    // 	tag += "<td>" + orderMap.get(i) + "</td>";
-    // 	tag += "<td>:" + " <input type=text id=p" + parseInt(i+1) + " name=player readonly=true value=0 size=2 style=text-align:right />" + "</td>";
-    // 	tag += "</tr>";
-    // }
-
-    // $(id_playBoard).html(tag);
-}
+//     return true;
+// }
 
 // 시작
 function start() {
 
-    batchOrderRandom();	// 순서 무작위 섞기
-    setUpPlayer();
-
     cnt = 10;
     turn = 0;
-    $("#turn").text(orderMap.get(orders[turn]));
-    $("#arrow" + parseInt(orders[turn]+1)).css("visibility", "visible");
-    $("input[name=player]").val(0);
 
     // 2차원 배열 생성
     var board = makeGameBoard(4,5);
@@ -295,13 +197,6 @@ function start() {
                                     $("#" + clicked[0]).css("background", "");
                                     $("#" + clicked[1]).css("background", "");
                                 // }, 500);
-
-                                // 턴 교체
-                                // $("#arrow" + parseInt(orders[turn]+1)).css("visibility", "hidden");
-                                // turn++;
-                                // if(turn == players.length) turn = 0;
-                                // $("#turn").text(orderMap.get(orders[turn]));
-                                // $("#arrow" + parseInt(orders[turn]+1)).css("visibility", "visible");
                             }	
 
                             while(clicked.length > 0) clicked.pop();
@@ -321,20 +216,6 @@ function start() {
                                     maxArr.push(i);
                                 }
                             }
-
-
-                            // if(maxArr.length == 1) {
-                            // 	$("#winner").text(orderMap.get(maxArr[0]) +" 가(이) 이겼습니다");
-                            // } else {
-                            // 	var msg = "";
-                            // 	for (var i = 0; i < maxArr.length; i++) {
-                            // 		msg += orderMap.get(maxArr[i]);
-                            // 		if(i < maxArr.length-1) msg += " 과(와) ";
-                            // 		else msg += " 가(이) 동점으로 무승부입니다.";
-                            // 	}
-
-                            // 	$("#winner").text(msg);
-                            // }
                         }
                     },650);
                             
@@ -443,24 +324,10 @@ function clickCard(num) {
 // 카운트 다운 프로그래스 바
 function countDown() {
 
-    //화면의 높이와 너비를 구한다.
-    var maskHeight = $(document).height();  
-    var maskWidth = $(window).width();  
-
-    //마스크의 높이와 너비를 화면 것으로 만들어 전체 화면을 채운다.
-    $('#mask').css({'width':maskWidth,'height':maskHeight});  
-
-    //애니메이션 효과
-    $('#mask').css("display", "block");      
-
-    var timeleft = 1;
     var downloadTimer = setInterval(function(){
-        if(timeleft <= 0){
+        // if(timeleft <= 0){
         clearInterval(downloadTimer);
         $(".card").css("background", "white");
-        $("#mask").css("display", "none");
-        }
-    //   document.getElementById("progressBar").value = 10 - timeleft;
-        timeleft -= 1;
-    }, 1000);
+        // }
+    }, 2000);
 }
